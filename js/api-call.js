@@ -21,7 +21,7 @@ function createHtml(blogPosts) {
   blogPosts.forEach(function (post) {
     blogPostContainer.innerHTML += `<a href=blog-post.html?id=${post.id} 
                                         <div><img src="${post._embedded["wp:featuredmedia"]["0"].source_url}"> </div>
-                                        <div>${post.title.rendered}</div>
+                                        <h3>${post.title.rendered}</h3>
 
                                     </a>`;
   });

@@ -1,0 +1,63 @@
+/* || Css variables (colors) */
+:root {
+  --main-orange: #f4a152;
+  --main-blue: #1e4a5c;
+  --main-white: #f8f9fa;
+  --main-black: #121416;
+
+  --orange100: #fbe0c5;
+  --orange300: #e57a10;
+  --orange400: #ac5c0c;
+  --orange500: #884707;
+
+  --blue100: #d1e7f0;
+  --blue200: #84bfd7;
+  --blue300: #3789a9;
+  --blue500: #0f252e;
+
+  --gray200: #e8eaed;
+  --gray300: #a5adb6;
+  --gray400: #535b65;
+
+  --main-green: #a2a861;
+  --main-red: #b2422e;
+
+  --green100: #d9dbbd;
+  --green300: #414224;
+
+  --red100: #e6a99e;
+  --red300: #612419;
+}
+/* ... */
+
+/* || General styles */
+
+body {
+  background-color: var(--main-white);
+  color: var(--main-black);
+  font-family: "Lato", cursive;
+}
+
+/* p {
+ 
+} */
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Amatic SC", sans-serif;
+}
+
+/* ul {
+} */
+
+/* ... */
+
+/* || Typography */
+
+/* ... */
+
+/* || Header and Main Navigation */
+
+/* ... */
