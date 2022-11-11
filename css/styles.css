@@ -32,6 +32,18 @@
 
 /* || General styles */
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: calc(15px + 0.390625vw);
+  /* Article about using calc() for responsive font-sizes 
+  https://matthewjamestaylor.com/responsive-font-size */
+}
+
 body {
   background-color: var(--main-white);
   color: var(--main-black);
@@ -59,5 +71,15 @@ h4 {
 /* ... */
 
 /* || Header and Main Navigation */
+
+nav {
+  width: 100%;
+  box-shadow: 0px 10px 15px rgba(15, 37, 46, 0.15);
+  padding: 10px 20px;
+}
+
+.logo {
+  max-height: 40px;
+}
 
 /* ... */
