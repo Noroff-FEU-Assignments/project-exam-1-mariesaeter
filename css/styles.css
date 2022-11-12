@@ -70,6 +70,16 @@ h4 {
 
 /* ... */
 
+/* || UTILITIES */
+
+.nobullets {
+  list-style: none;
+}
+
+/* ... */
+
+/* || SITEWIDE */
+
 /* || Header and Main Navigation */
 
 nav {
@@ -82,4 +92,5 @@ nav {
   max-height: 40px;
 }
 
+/* ... */
 /* ... */

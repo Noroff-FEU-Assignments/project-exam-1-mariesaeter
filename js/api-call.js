@@ -3,21 +3,34 @@ const url = "https://feulur.com/tronderpatur/wp-json/wp/v2/posts?_embed";
 const urlCategories =
   "https://feulur.com/tronderpatur/wp-json/wp/v2/categories";
 
+const navBlog = document.querySelector(".nav-blog");
+
 const blogPostContainer = document.querySelector(".blogPostContainer");
+const subnavParent = document.querySelector(".subnav-parent");
 
 async function getCategories() {
   try {
-    const response = await fetch(url);
+    const response = await fetch(urlCategories);
     const categories = await response.json();
 
-    // blogPostContainer.innerHTML = "";
     createHtml(categories);
+    console.log(categories);
   } catch (error) {
     console.log(error);
   }
 }
 
 getCategories();
+
+function createHtml(categories) {
+  categories.forEach(function (category) {
+    if (category.parent === 0) {
+      navBlog.innerHTML += `<ul><a href=${category.link}>${category.name}</a></ul>`;
+    }
+    if (category.parent === 3) {
+    }
+  });
+}
 
 // async function getBlogPosts() {
 //   try {
