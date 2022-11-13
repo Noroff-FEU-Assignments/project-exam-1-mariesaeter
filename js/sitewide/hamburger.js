@@ -6,6 +6,9 @@ const hamburgerIcon = document.querySelector(".hamburger");
 const closeIcon = document.querySelector(".close");
 const menuItems = document.querySelectorAll(".menu-item");
 
+// creating functional hamburger menu
+// inspiration: https://dev.to/devggaurav/let-s-build-a-responsive-navbar-and-hamburger-menu-using-html-css-and-javascript-4gci
+// remember to go over this
 hamburgerMenu.addEventListener("click", mobileMenu);
 
 function mobileMenu() {
