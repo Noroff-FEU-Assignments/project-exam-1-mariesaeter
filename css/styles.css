@@ -139,6 +139,7 @@ nav i {
 }
 
 .logo-text,
+.nav-text,
 .close {
   display: none;
 }
@@ -161,7 +162,7 @@ nav i {
     display: none;
   }
 
-  .menu {
+  .nav-text {
     display: flex;
     column-gap: 55px;
     font-size: 1.75rem;
