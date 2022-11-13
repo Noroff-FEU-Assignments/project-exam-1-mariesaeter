@@ -30,20 +30,23 @@
 }
 /* ... */
 
-/* || General styles */
+/* || GENERAL STYLES || */
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 html {
-  font-size: calc(15px + 0.390625vw);
+  font-size: 16px;
+  /* font-size: calc(15px + 0.390625vw); */
   /* Article about using calc() for responsive font-sizes 
   https://matthewjamestaylor.com/responsive-font-size */
 }
-
+/* || Typography */
 body {
   background-color: var(--main-white);
   color: var(--main-black);
@@ -57,28 +60,47 @@ body {
 h1,
 h2,
 h3,
-h4 {
+h4,
+nav a {
   font-family: "Amatic SC", sans-serif;
 }
+/* ... */
 
-/* ul {
-} */
+a {
+  font-weight: bold;
+  color: var(--orange400);
+}
+
+a:hover {
+  color: var(--main-orange);
+}
+/* ... */
+
+i {
+  font-size: 32px;
+}
 
 /* ... */
 
-/* || Typography */
+button {
+  background: none;
+  border: none;
+}
 
-/* ... */
-
-/* || UTILITIES */
+/* || UTILITIES || */
 
 .nobullets {
   list-style: none;
 }
 
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+
 /* ... */
 
-/* || SITEWIDE */
+/* || SITEWIDE || */
 
 /* || Header and Main Navigation */
 
@@ -86,10 +108,83 @@ nav {
   width: 100%;
   box-shadow: 0px 10px 15px rgba(15, 37, 46, 0.15);
   padding: 10px 20px;
+  justify-content: space-between;
 }
 
-.logo {
+nav a,
+nav i {
+  color: var(--main-black);
+  text-decoration: none;
+}
+
+.menu {
+  position: fixed;
+  transform: translateY(-100%);
+  transition: transform 0.2s;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  background-image: url("../images/nav-background.jpg");
+  padding-top: 3rem;
+}
+
+.openMenu {
+  transform: translateY(0);
+}
+
+.logo-img {
   max-height: 40px;
+}
+
+.logo-text,
+.close {
+  display: none;
+}
+
+.subnav-parent {
+  display: none;
+}
+
+.hamburger-menu {
+  position: fixed;
+  z-index: 100;
+  top: 0.5rem;
+  right: 1rem;
+  padding: 5px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 767px) {
+  .hamburger-menu {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    column-gap: 55px;
+    font-size: 1.75rem;
+    margin-right: 10%;
+  }
+
+  .active-page {
+    color: var(--main-blue);
+    border: 2px solid var(--main-orange);
+    padding: 0 10px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .logo-text {
+    display: block;
+    padding-left: 20px;
+    font-size: 2rem;
+  }
+
+  .logo:hover {
+    color: var(--main-black);
+  }
 }
 
 /* ... */

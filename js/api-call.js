@@ -25,7 +25,7 @@ getCategories();
 function createHtml(categories) {
   categories.forEach(function (category) {
     if (category.parent === 0) {
-      navBlog.innerHTML += `<ul><a href=${category.link}>${category.name}</a></ul>`;
+      navBlog.innerHTML += `<ul class="subnav-parent"><a href=${category.link}>${category.name}</a></ul>`;
     }
     if (category.parent === 3) {
     }

@@ -18,25 +18,41 @@
     <!-- Link to CSS files -->
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <!-- -->
+    <!-- Link to Fontawesome free kit -->
+    <script
+      src="https://kit.fontawesome.com/a2324745d3.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- -->
   </head>
   <body>
-    <nav>
-      <a href="index.html"
-        ><img src="images/logo.png" alt="Trønder på tur logo" class="logo"
-      /></a>
-      <ul class="nobullets">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="index.html">About</a></li>
+    <nav class="flex-center">
+      <a class="logo flex-center" href="index.html"
+        ><img
+          src="images/logo.png"
+          alt="Trønder på tur logo"
+          class="logo-img"
+        />
+        <div class="logo-text">Trønder på tur</div></a
+      >
+      <ul class="nobullets flex-center menu">
+        <li><a class="active-page menu-item" href="index.html">Home</a></li>
+        <li><a class="menu-item" href="index.html">About</a></li>
         <ul class="nav-blog">
-          <a href="index.html">Blog</a>
+          <a class="menu-item" href="index.html">Blog</a>
           <ul class="subnav-parent"></ul>
         </ul>
-        <li><a href="index.html">Contact</a></li>
+        <li><a class="menu-item" href="index.html">Contact</a></li>
       </ul>
+      <button class="hamburger-menu">
+        <div class="hamburger"><i class="fa-solid fa-bars"></i></div>
+        <div class="close"><i class="fa-solid fa-close"></i></div>
+      </button>
     </nav>
     <div class="blogPostContainer"></div>
 
     <!-- Link to JS files -->
+    <script src="js/sitewide/hamburger.js" type="module"></script>
     <script src="js/api-call.js" type="module"></script>
   </body>
 </html>
