@@ -173,7 +173,7 @@ nav i {
   }
 
   .bar {
-    width: 25px;
+    width: 30px;
     height: 3px;
     transition: all 0.3s ease-in-out;
     background-color: var(--main-black);
@@ -188,10 +188,10 @@ nav i {
     opacity: 0;
   }
   .hamburger-menu.active .bar:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
+    transform: translateY(9.5px) rotate(45deg);
   }
   .hamburger-menu.active .bar:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
+    transform: translateY(-9.5px) rotate(-45deg);
   }
 }
 
