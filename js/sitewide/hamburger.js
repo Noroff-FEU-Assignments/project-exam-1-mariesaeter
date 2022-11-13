@@ -4,7 +4,7 @@ const hamburgerIcon = document.querySelector(".hamburger");
 const closeIcon = document.querySelector(".close");
 const menuItems = document.querySelectorAll(".menu-item");
 
-let mql = window.matchMedia("(max-width:767px)");
+let mql = window.matchMedia("(min-width:767px)");
 
 console.log(mql);
 
@@ -12,8 +12,8 @@ mql.addEventListener("change", (event) => {
   if (event.matches) {
     toggleMenu();
   } else {
-    menu.style.display = "flex";
-    menu.style.background = "none";
+    menu.style.display = "block";
+    menu.style.backgroundImage = "none";
   }
 });
 
@@ -39,10 +39,11 @@ function toggleMenu() {
     menu.style.display = "block";
     closeIcon.style.display = "block";
     hamburgerIcon.style.display = "none";
+    menu.style.backgroundImage = "url('../../images/nav-background.jpg')";
   }
-  hamburgerMenu.addEventListener("click", toggleMenu);
-
-  menuItems.forEach(function (menuItem) {
-    menuItem.addEventListener("click", toggleMenu);
-  });
 }
+hamburgerMenu.addEventListener("click", toggleMenu);
+
+menuItems.forEach(function (menuItem) {
+  menuItem.addEventListener("click", toggleMenu);
+});
