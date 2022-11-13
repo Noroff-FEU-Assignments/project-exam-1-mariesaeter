@@ -173,7 +173,7 @@ nav i {
   }
 
   .bar {
-    width: 22px;
+    width: 25px;
     height: 3px;
     transition: all 0.3s ease-in-out;
     background-color: var(--main-black);
