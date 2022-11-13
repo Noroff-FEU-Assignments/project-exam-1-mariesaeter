@@ -117,63 +117,95 @@ nav i {
   text-decoration: none;
 }
 
-.menu {
-  position: fixed;
-  transform: translateY(-100%);
-  transition: transform 0.2s;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 99;
-  background-image: url("../images/nav-background.jpg");
-  padding-top: 3rem;
-}
-
-.openMenu {
-  transform: translateY(0);
-}
-
 .logo-img {
   max-height: 40px;
-}
-
-.logo-text,
-.nav-text,
-.close {
-  display: none;
 }
 
 .subnav-parent {
   display: none;
 }
-
 .hamburger-menu {
-  position: fixed;
-  z-index: 100;
-  top: 0.5rem;
-  right: 1rem;
-  padding: 5px;
-  cursor: pointer;
+  display: none;
 }
 
-@media screen and (min-width: 767px) {
-  .hamburger-menu {
+@media only screen and (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    /* transform: translateY(-100%);
+  transition: transform 0.2s; */
+    top: 0;
+    bottom: 0;
+    right: -200%;
+    flex-direction: column;
+    width: 100%;
+    z-index: 99;
+    text-align: center;
+    transition: 0.3s;
+    background-image: url("../images/nav-background.jpg");
+    padding-top: 3rem;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  /* .openMenu {
+    transform: translateY(0);
+  } */
+
+  .logo-text,
+  .nav-menu,
+  .close {
     display: none;
   }
 
-  .nav-text {
+  .hamburger-menu {
     display: flex;
-    column-gap: 55px;
-    font-size: 1.75rem;
-    margin-right: 10%;
+    flex-direction: column;
+    position: fixed;
+    z-index: 100;
+
+    right: 1rem;
+    padding: 5px;
+    cursor: pointer;
+    height: 32px;
+    justify-content: space-between;
   }
 
-  .active-page {
-    color: var(--main-blue);
-    border: 2px solid var(--main-orange);
-    padding: 0 10px;
+  .bar {
+    width: 22px;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--main-black);
+    border-radius: 5px;
   }
+
+  .hamburger-menu.active .bar {
+    background-color: var(--main-white);
+  }
+
+  .hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger-menu.active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+  .hamburger-menu.active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+}
+
+.nav-menu {
+  display: flex;
+  column-gap: 55px;
+  font-size: 1.75rem;
+  margin-right: 10%;
+}
+
+.active-page {
+  color: var(--main-blue);
+  border: 2px solid var(--main-orange);
+  padding: 0 10px;
 }
 
 @media screen and (min-width: 1024px) {

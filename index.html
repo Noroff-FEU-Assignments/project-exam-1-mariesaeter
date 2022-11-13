@@ -3,11 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="Home page of Trønder på tur" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-      viewport-fit="cover"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home - Trønder på tur</title>
 
     <!-- Fonts -->
@@ -30,39 +26,47 @@
     <!-- -->
   </head>
   <body>
-    <nav class="flex-center">
-      <a class="logo flex-center" href="index.html"
-        ><img
-          src="images/logo.png"
-          alt="Trønder på tur logo"
-          class="logo-img"
-        />
-        <div class="logo-text">Trønder på tur</div></a
-      >
-      <ul class="nobullets flex-center nav-text">
-        <li><a class="active-page" href="index.html">Home</a></li>
-        <li><a href="index.html">About</a></li>
-        <ul class="nav-blog">
-          <a href="index.html">Blog</a>
-          <ul class="subnav-parent"></ul>
+    <header>
+      <nav class="flex-center navbar">
+        <a class="logo flex-center" href="index.html"
+          ><img
+            src="images/logo.png"
+            alt="Trønder på tur logo"
+            class="logo-img"
+          />
+          <div class="logo-text">Trønder på tur</div></a
+        >
+        <ul class="nobullets flex-center nav-menu">
+          <li><a class="active-page nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="index.html">About</a></li>
+          <ul class="nav-blog">
+            <a class="nav-link" href="index.html">Blog</a>
+            <ul class="subnav-parent"></ul>
+          </ul>
+          <li><a class="nav-link" href="index.html">Contact</a></li>
         </ul>
-        <li><a href="index.html">Contact</a></li>
-      </ul>
-      <ul class="navigation nobullets flex-center menu">
-        <li><a class="active-page menu-item" href="index.html">Home</a></li>
-        <li><a class="menu-item" href="index.html">About</a></li>
-        <ul class="nav-blog">
-          <a class="menu-item" href="index.html">Blog</a>
-          <ul class="subnav-parent"></ul>
-        </ul>
-        <li><a class="menu-item" href="index.html">Contact</a></li>
-      </ul>
-      <button class="hamburger-menu">
-        <div class="hamburger"><i class="fa-solid fa-bars"></i></div>
-        <div class="close"><i class="fa-solid fa-close"></i></div>
-      </button>
-    </nav>
-    <div class="blogPostContainer"></div>
+        <!-- <ul class="navigation nobullets flex-center menu">
+          <li><a class="active-page menu-item" href="index.html">Home</a></li>
+          <li><a class="menu-item" href="index.html">About</a></li>
+          <ul class="nav-blog">
+            <a class="menu-item" href="index.html">Blog</a>
+            <ul class="subnav-parent"></ul>
+          </ul>
+          <li><a class="menu-item" href="index.html">Contact</a></li>
+        </ul> -->
+        <button class="hamburger-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <!-- <div class="hamburger"><i class="fa-solid fa-bars"></i></div>
+          <div class="close"><i class="fa-solid fa-close"></i></div> -->
+        </button>
+      </nav>
+    </header>
+    <main>
+      <div class="blogPostContainer"></div>
+    </main>
+    <footer></footer>
 
     <!-- Link to JS files -->
     <script src="js/sitewide/hamburger.js" type="module"></script>
