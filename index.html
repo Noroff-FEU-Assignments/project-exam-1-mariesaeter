@@ -17,6 +17,7 @@
 
     <!-- Link to CSS files -->
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
     <!-- -->
     <!-- Link to Fontawesome free kit -->
     <script
@@ -27,7 +28,7 @@
   </head>
   <body>
     <header>
-      <nav class="flex-center navbar">
+      <nav class="flex-center navbar box-shadow">
         <a class="logo flex-center" href="index.html"
           ><img
             src="images/logo.png"
@@ -37,34 +38,60 @@
           <div class="logo-text">Trønder på tur</div></a
         >
         <ul class="nobullets flex-center nav-menu">
-          <li><a class="active-page nav-link" href="index.html">Home</a></li>
-          <li><a class="nav-link" href="index.html">About</a></li>
-          <ul class="nav-blog">
+          <li class="nav-item">
+            <a class="active-page nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">About</a>
+          </li>
+          <ul class="nav-blog nav-item">
             <a class="nav-link" href="index.html">Blog</a>
             <ul class="subnav-parent"></ul>
           </ul>
-          <li><a class="nav-link" href="index.html">Contact</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Contact</a>
+          </li>
         </ul>
-        <!-- <ul class="navigation nobullets flex-center menu">
-          <li><a class="active-page menu-item" href="index.html">Home</a></li>
-          <li><a class="menu-item" href="index.html">About</a></li>
-          <ul class="nav-blog">
-            <a class="menu-item" href="index.html">Blog</a>
-            <ul class="subnav-parent"></ul>
-          </ul>
-          <li><a class="menu-item" href="index.html">Contact</a></li>
-        </ul> -->
+
         <button class="hamburger-menu">
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
-          <!-- <div class="hamburger"><i class="fa-solid fa-bars"></i></div>
-          <div class="close"><i class="fa-solid fa-close"></i></div> -->
         </button>
       </nav>
+      <div class="hero-img centered-content">
+        <h1 class="h1-white">Trønder på tur</h1>
+
+        <div class="search centered-content">
+          <label class="search-label" for="search-site">
+            Check if I’ve been where you want to go</label
+          >
+          <div class="flex-center">
+            <input type="search" id="search-site" name="search" placeholder="Try to search for a destination">
+            <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+      </div>
     </header>
     <main>
-      <div class="blogPostContainer"></div>
+      <h2>Latest posts</h2>
+      <div class="latest-carousel-wrapper">
+        <ul class="latest-carousel">
+
+        </ul>
+        <div class="latest-button-wrapper">
+          <button class="left-arrow"><i class="fa-solid fa-circle-arrow-left"></i></button>
+          <button class="right-arrow"><i class="fa-solid fa-circle-arrow-right"></i></button>
+        </div>
+      </div>
+      <!-- <section class="section-latest-posts flex-center">
+      
+     <button class="left-arrow"><i class="fa-solid fa-circle-arrow-left"></i></button>
+      
+      <div class="latest-posts-container">
+        
+      </div>
+      <button class="right-arrow"><i class="fa-solid fa-circle-arrow-right"></i></button>
+      </section> -->
     </main>
     <footer></footer>
 

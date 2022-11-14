@@ -41,8 +41,8 @@
 }
 
 html {
-  font-size: 16px;
-  /* font-size: calc(15px + 0.390625vw); */
+  /* font-size: 16px; */
+  font-size: calc(15px + 0.390625vw);
   /* Article about using calc() for responsive font-sizes 
   https://matthewjamestaylor.com/responsive-font-size */
 }
@@ -51,6 +51,12 @@ body {
   background-color: var(--main-white);
   color: var(--main-black);
   font-family: "Lato", cursive;
+}
+
+main {
+  position: relative;
+  top: 65px;
+  margin: 2%;
 }
 
 /* p {
@@ -63,6 +69,7 @@ h3,
 h4,
 nav a {
   font-family: "Amatic SC", sans-serif;
+  color: var(--main-black);
 }
 /* ... */
 
@@ -78,6 +85,7 @@ a:hover {
 
 i {
   font-size: 32px;
+  color: var(--main-black);
 }
 
 /* ... */
@@ -85,6 +93,27 @@ i {
 button {
   background: none;
   border: none;
+  cursor: pointer;
+}
+
+/* ... */
+
+input {
+  height: 52px;
+  border: none;
+  padding: 0 20px;
+  color: var(--gray300);
+  width: 100%;
+}
+
+input:focus {
+  outline: 2px solid var(--main-orange);
+}
+
+@media only screen and (min: 768px) {
+  input {
+    width: 80%;
+  }
 }
 
 /* || UTILITIES || */
@@ -96,6 +125,41 @@ button {
 .flex-center {
   display: flex;
   align-items: center;
+  width: 100%;
+}
+
+.box-shadow {
+  box-shadow: 0px 10px 15px rgba(15, 37, 46, 0.15);
+}
+
+.centered-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+
+/* || different colors on elements || */
+.h1-white {
+  color: var(--main-white);
+  font-size: 5rem;
+}
+
+/* ... */
+
+/* || Buttons || */
+.search-btn {
+  background-color: var(--main-orange);
+}
+
+.search-btn:hover {
+  background-color: var(--orange300);
+}
+
+.fa-magnifying-glass {
+  color: var(--main-white);
+  padding: 10px;
 }
 
 /* ... */
@@ -106,9 +170,12 @@ button {
 
 nav {
   width: 100%;
-  box-shadow: 0px 10px 15px rgba(15, 37, 46, 0.15);
   padding: 10px 20px;
+  height: 65px;
   justify-content: space-between;
+  position: fixed;
+  background: var(--main-white);
+  z-index: 98;
 }
 
 nav a,
@@ -119,6 +186,15 @@ nav i {
 
 .logo-img {
   max-height: 40px;
+}
+.logo-text {
+  display: block;
+  padding-left: 20px;
+  font-size: 2rem;
+}
+
+.logo:hover {
+  color: var(--main-black);
 }
 
 .subnav-parent {
@@ -131,31 +207,23 @@ nav i {
 @media only screen and (max-width: 768px) {
   .nav-menu {
     position: fixed;
-    /* transform: translateY(-100%);
-  transition: transform 0.2s; */
     top: 0;
     bottom: 0;
     right: -200%;
     flex-direction: column;
     width: 100%;
     z-index: 99;
-    text-align: center;
     transition: 0.3s;
     background-image: url("../images/nav-background.jpg");
-    padding-top: 3rem;
+    padding-top: 4rem;
   }
 
   .nav-menu.active {
     left: 0;
   }
 
-  /* .openMenu {
-    transform: translateY(0);
-  } */
-
   .logo-text,
-  .nav-menu,
-  .close {
+  .nav-menu {
     display: none;
   }
 
@@ -180,6 +248,7 @@ nav i {
     border-radius: 5px;
   }
 
+  /* animated hamburger icon */
   .hamburger-menu.active .bar {
     background-color: var(--main-white);
   }
@@ -192,6 +261,17 @@ nav i {
   }
   .hamburger-menu.active .bar:nth-child(3) {
     transform: translateY(-9.5px) rotate(-45deg);
+  }
+
+  .nav-item {
+    background-color: var(--main-white);
+    width: 100%;
+    box-shadow: 0px 10px 15px rgba(15, 37, 46, 0.15);
+    margin-bottom: 2rem;
+    padding: 5px 40px;
+  }
+  nav a {
+    font-size: 1.5em;
   }
 }
 
@@ -209,16 +289,103 @@ nav i {
 }
 
 @media screen and (min-width: 1024px) {
-  .logo-text {
-    display: block;
-    padding-left: 20px;
-    font-size: 2rem;
-  }
-
-  .logo:hover {
-    color: var(--main-black);
-  }
 }
 
 /* ... */
+
+/* || Blog cards || */
+
+.latest-carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  max-height: 326px;
+}
+
+.latest-carousel {
+  display: flex;
+  /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
+  margin: 0 auto;
+  column-gap: 55px;
+  width: 90%;
+}
+
+.latest-button-wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+.small-post {
+  max-width: 200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* .small-post-img-square {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+} */
+
+.small-post-img {
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
+}
 /* ... */
+
+@media only screen and (max-width: 500px) {
+  .latest-carousel {
+    column-gap: 15px;
+  }
+
+  .small-post {
+    max-width: 150px;
+  }
+  .small-post-img {
+    width: 150px;
+    height: 150px;
+  }
+}
+/* .latest-posts-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 768px) {
+  .latest-posts-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .latest-posts-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: 1023px) and (max-width: 1300px) {
+  .latest-posts-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+} */
+
+/* .arrow-left {
+  background-color: var(--main-blue);
+  width: 32px;
+  height: 32px;
+  border-radius: 50px;
+}
+
+.bar-white {
+  background-color: var(--main-white);
+  width: 25px;
+  height: 3px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 5px;
+} */

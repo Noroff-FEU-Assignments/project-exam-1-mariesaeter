@@ -5,54 +5,58 @@ const urlCategories =
 
 const navBlog = document.querySelector(".nav-blog");
 
-const blogPostContainer = document.querySelector(".blogPostContainer");
-const subnavParent = document.querySelector(".subnav-parent");
+const latestPostsCarousel = document.querySelector(".latest-carousel");
+// // const subnavParent = document.querySelector(".subnav-parent");
 
-async function getCategories() {
+// // async function getCategories() {
+// //   try {
+// //     const response = await fetch(urlCategories);
+// //     const categories = await response.json();
+
+// //     createHtml(categories);
+// //     console.log(categories);
+// //   } catch (error) {
+// //     console.log(error);
+// //   }
+// // }
+
+// // getCategories();
+
+// // function createHtml(categories) {
+// //   categories.forEach(function (category) {
+// //     if (category.parent === 0) {
+// //       navBlog.innerHTML += `<ul class="subnav-parent"><a href=${category.link}>${category.name}</a></ul>`;
+// //     }
+// //     if (category.parent === 3) {
+// //     }
+// //   });
+// // }
+
+const latestCarousel = document.querySelector("latest-carousel");
+const leftButton = document.querySelector(".left-arrow");
+const rightButton = document.querySelector(".right-arrow");
+
+async function getBlogPosts() {
   try {
-    const response = await fetch(urlCategories);
-    const categories = await response.json();
+    const response = await fetch(url);
+    const blogPosts = await response.json();
 
-    createHtml(categories);
-    console.log(categories);
+    latestPostsCarousel.innerHTML = "";
+    createHtml(blogPosts);
   } catch (error) {
     console.log(error);
   }
 }
 
-getCategories();
+getBlogPosts();
 
-function createHtml(categories) {
-  categories.forEach(function (category) {
-    if (category.parent === 0) {
-      navBlog.innerHTML += `<ul class="subnav-parent"><a href=${category.link}>${category.name}</a></ul>`;
-    }
-    if (category.parent === 3) {
-    }
+//https: dalenguyen.medium.com/how-to-get-featured-image-from-wordpress-rest-api-5e023b9896c6
+function createHtml(blogPosts) {
+  blogPosts.forEach(function (post) {
+    latestPostsCarousel.innerHTML += `<li class="latest-card small-post"<a href=blog-post.html?id=${post.id}>
+                                        <div class="small-post-img-square"><img class="small-post-img" src="${post._embedded["wp:featuredmedia"]["0"].source_url}"> </div>
+                                        <h3 class>${post.title.rendered}</h3>
+
+                                    </li>`;
   });
 }
-
-// async function getBlogPosts() {
-//   try {
-//     const response = await fetch(url);
-//     const blogPosts = await response.json();
-
-//     // blogPostContainer.innerHTML = "";
-//     // createHtml(blogPosts);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
-
-// getBlogPosts();
-
-// https://dalenguyen.medium.com/how-to-get-featured-image-from-wordpress-rest-api-5e023b9896c6
-// function createHtml(blogPosts) {
-//   blogPosts.forEach(function (post) {
-//     blogPostContainer.innerHTML += `<a href=blog-post.html?id=${post.id}
-//                                         <div><img src="${post._embedded["wp:featuredmedia"]["0"].source_url}"> </div>
-//                                         <h3>${post.title.rendered}</h3>
-
-//                                     </a>`;
-//   });
-// }
