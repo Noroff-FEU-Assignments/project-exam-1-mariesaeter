@@ -41,8 +41,8 @@
 }
 
 html {
-  /* font-size: 16px; */
-  font-size: calc(15px + 0.390625vw);
+  font-size: 16px;
+  /* font-size: calc(15px + 0.390625vw); */
   /* Article about using calc() for responsive font-sizes 
   https://matthewjamestaylor.com/responsive-font-size */
 }
@@ -114,6 +114,10 @@ input:focus {
   input {
     width: 80%;
   }
+
+  body {
+    font-size: 0.889rem;
+  }
 }
 
 /* || UTILITIES || */
@@ -137,13 +141,14 @@ input:focus {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 90%;
+  width: 100%;
 }
 
 /* || different colors on elements || */
 .h1-white {
   color: var(--main-white);
-  font-size: 5rem;
+  font-size: 4.44rem;
+  line-height: 70px;
 }
 
 /* ... */
