@@ -41,7 +41,8 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: 18px;
+
   /* font-size: calc(15px + 0.390625vw); */
   /* Article about using calc() for responsive font-sizes 
   https://matthewjamestaylor.com/responsive-font-size */
@@ -73,10 +74,26 @@ nav a {
 }
 /* ... */
 
+h2 {
+  font-size: 3.938rem;
+}
+
+h3 {
+  font-size: 1.833rem;
+  color: var(--main-blue);
+}
+
 a {
   font-weight: bold;
-  color: var(--orange400);
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
 }
+
+/* a {
+  font-weight: bold;
+  color: var(--orange400);
+  text-decoration: none;
+} */
 
 a:hover {
   color: var(--main-orange);
@@ -110,13 +127,18 @@ input:focus {
   outline: 2px solid var(--main-orange);
 }
 
-@media only screen and (min: 768px) {
-  input {
-    width: 80%;
-  }
-
+@media only screen and (max-width: 768px) {
   body {
     font-size: 0.889rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 2.833rem;
+    text-align: center;
+  }
+  h3 {
+    font-size: 1.5rem;
   }
 }
 
@@ -144,10 +166,35 @@ input:focus {
   width: 100%;
 }
 
+.cta-sub {
+  text-align: center;
+  overflow: hidden;
+  border: 3px solid var(--orange100);
+  padding: 15px 45px;
+  color: var(--orange400);
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+  display: block;
+  margin: 20px auto;
+  transition: 0.3s ease-in-out;
+}
+
+.cta-sub:hover {
+  border-color: var(--main-orange);
+}
+/* .loader {
+  background-repeat: no-repeat;
+  fill: linear-gradient(90deg, #1e4a5c, #f4a152);
+  width: 100px;
+  height: 100px;
+  animation: colorchange 2s ease infinite;
+} */
+
 /* || different colors on elements || */
 .h1-white {
   color: var(--main-white);
-  font-size: 4.44rem;
+  font-size: 6.875rem;
   line-height: 70px;
 }
 
@@ -293,42 +340,59 @@ nav i {
   padding: 0 10px;
 }
 
-@media screen and (min-width: 1024px) {
-}
-
 /* ... */
 
 /* || Blog cards || */
 
-.latest-carousel-wrapper {
-  position: relative;
+.carousel-wrapper {
+  /* position: relative; */
   overflow: hidden;
-  margin: 0 auto;
-  max-height: 326px;
+  /* overflow: hidden;
+  margin: 0 auto;*/
 }
 
 .latest-carousel {
-  display: flex;
   /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
-  margin: 0 auto;
-  column-gap: 55px;
-  width: 90%;
+  /* margin: 0 auto; */
+  column-gap: 50px;
 }
 
-.latest-button-wrapper {
+.carousel-main {
   display: flex;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+/* position: absolute;
+  left: 0;
+  right: 0;
+  width: 180%; */
+
+/* .latest-button-wrapper {
+   display: flex;
   justify-content: space-between;
 
   width: 100%;
   height: 100%;
-  align-items: center;
+  align-items: center; 
+} */
+
+.left-arrow {
+  left: 0px;
+  position: absolute;
+  top: 50%;
+}
+
+.right-arrow {
+  right: 0px;
+  position: absolute;
+  top: 50%;
 }
 
 .small-post {
   max-width: 200px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
+
+  /* display: inline-block; */
+  /* flex-direction: column; */
 }
 
 /* .small-post-img-square {
@@ -341,8 +405,34 @@ nav i {
   object-fit: cover;
   width: 200px;
   height: 200px;
+  transition: 0.25s ease-in-out;
 }
 /* ... */
+
+.small-post a:hover h3 {
+  color: var(--main-orange);
+}
+
+.small-post a:hover .small-post-img {
+  transform: scale(1.025);
+}
+
+.progress {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.progress-circle {
+  width: 15px;
+  height: 15px;
+  background-color: var(--blue100);
+  border-radius: 20px;
+  margin: 4px;
+}
+
+.progress-circle.active {
+  background-color: var(--main-blue);
+}
 
 @media only screen and (max-width: 500px) {
   .latest-carousel {
