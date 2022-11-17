@@ -144,8 +144,9 @@ const featuredCarousel = document.querySelector(".featured-carousel");
 
 const urlTyttebaera =
   "https://feulur.com/tronderpatur/wp-json/wp/v2/posts?_embed&categories=10";
-
-console.log(urlTyttebaera);
+// next and prev button function
+const featuredNext = document.querySelector(".featured-next");
+const featuredPrev = document.querySelector(".featured-prev");
 
 async function getFeaturedPosts() {
   try {
@@ -170,7 +171,7 @@ async function getFeaturedPosts() {
 
 getFeaturedPosts();
 
-//Merge arrays
+//Merge arrays to retrieve all blog posts
 //https://blog.greenroots.info/5-ways-to-merge-arrays-in-javascript-and-their-differences
 
 const merge = (first, second) => {
@@ -183,9 +184,94 @@ const merge = (first, second) => {
 
 function createFeatured(featuredTyttebaera) {
   featuredTyttebaera.forEach(function (post) {
-    featuredCarousel.innerHTML += `<li class="small-post nobullets"><a class="small-post-link" href=blog-post.html?id=${post.id}>
-      <div class="small-post-img-square"><img class="small-post-img" src="${post._embedded["wp:featuredmedia"]["0"].source_url}"> </div>
-      <h3>${post.title.rendered}</h3></a>
-  </li>`;
+    featuredCarousel.innerHTML += `<div class="nobullets featured-post">
+      <img class="featured-post-img" src="${post._embedded["wp:featuredmedia"]["0"].source_url}"> 
+      <div class="featured-post-card">
+      <h3>${post.title.rendered}</h3>
+      <p>${post.excerpt.rendered}</p>
+      <a href="blog-post.html?id=${post.id}" class="btn-featured"><button class="cta">Read more</button></a>
+      </div>
+  </div>`;
   });
+
+  featuredCarousel.firstChild.classList.add("active");
 }
+// slideshow functioning!!! https://codepen.io/zachMartinez/pen/MEONMX
+
+let current = 0;
+// let allChildren = featuredCarousel.childNodes;
+// console.log(allChildren);
+featuredNext.addEventListener("click", function () {
+  featuredCarousel.childNodes[current].classList.remove("active");
+  current++;
+  console.log(current);
+  if (current === featuredCarousel.childNodes.length) {
+    current = 0;
+  }
+  featuredCarousel.childNodes[current].classList.add("active");
+});
+
+featuredPrev.addEventListener("click", function () {
+  featuredCarousel.childNodes[current].classList.remove("active");
+  current--;
+  if (current < 0) {
+    current = featuredCarousel.childNodes.length - 1;
+  }
+  featuredCarousel.childNodes[current].classList.add("active");
+});
+// const featuredPosts = document.getElementsByClassName("featured-post");
+// console.log(featuredPosts);
+
+// featuredPosts[0].className = "active";
+// try 1 featured //
+// let featuredIndex = 1;
+// showFeatured(featuredIndex);
+
+// //Next/prev function
+// function nextSlide(n) {
+//   showFeatured((featuredIndex += n));
+// }
+
+// // show this slide
+// function currentFeatured(n) {
+//   showFeatured((featuredIndex = n));
+// }
+
+// function showFeatured(n) {
+//   let i;
+//   let featuredPost = document.getElementsByClassName("featured-post");
+
+//   // let featuredPost = Array.from(featuredPostNode);
+
+//   console.log(featuredPost);
+//   let breadcrumbs = document.getElementsByClassName("featured-progress-circle");
+//   if (n > featuredPost.length) {
+//     featuredIndex = 1;
+//   }
+//   if (n < 1) {
+//     featuredIndex = featuredPost.length;
+//   }
+//   for (i = 0; i < featuredPost.length; i++) {
+//     featuredPost[i].style.display = "none";
+//   }
+//   for (i = 0; i < breadcrumbs.length; i++) {
+//     breadcrumbs[i].className = breadcrumbs[i].className.replace(" active", "");
+//   }
+//   featuredPost[featuredIndex - 1].style.display = "block";
+//   breadcrumbs[featuredIndex - 1].className += " active";
+// }
+
+// next and prev button function
+// const featuredNext = document.querySelector(".featured-next");
+// const featuredPrev = document.querySelector(".featured-prev");
+
+// featuredNext.addEventListener("click", nextSlide(1));
+// featuredPrev.addEventListener("click", nextSlide(-1));
+
+// const featuredBreadcrumb1 = document.getElementById("featured-1");
+// const featuredBreadcrumb2 = document.getElementById("featured-2");
+// const featuredBreadcrumb3 = document.getElementById("featured-3");
+
+// featuredBreadcrumb1.addEventListener("click", currentFeatured(1));
+// featuredBreadcrumb2.addEventListener("click", currentFeatured(2));
+// featuredBreadcrumb3.addEventListener("click", currentFeatured(3));

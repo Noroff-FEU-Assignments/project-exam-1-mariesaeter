@@ -99,15 +99,16 @@
       <h2>Featured from the Chronicles of Tyttebæra</h2>
       <div class="featured-carousel-wrapper">
         <div class="loader-container"></div>
-        <ul class="carousel-main featured-carousel" id="featured-carousel">
-        </ul>
+        <div class="carousel-main featured-carousel" id="featured-carousel">
+        </div>
         <div class="featured-button-wrapper slides-button-wrapper">
           <button class="featured-prev"><i class="fa-solid fa-circle-arrow-left"></i></button>
-          <button class="featured-next"><i class="fa-solid fa-circle-arrow-right"></i></button>
+          <button class="featured-next" ><i class="fa-solid fa-circle-arrow-right"></i></button>
         </div>
         <div class="progress">
-          <button class="progress-circle active" id="progress-1"></button>
-          <button class="progress-circle" id="progress-2"></button>
+          <button class="featured-progress-circle active" onclick="currentFeatured(1)"></button>
+          <button class="featured-progress-circle" onclick="currentFeatured(2)"></button>
+          <button class="featured-progress-circle" onclick="currentFeatured(3)"></button>
         </div>
       </div>
   </section>

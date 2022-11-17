@@ -376,16 +376,22 @@ nav i {
   align-items: center; 
 } */
 
+.featured-button-wrapper {
+  position: relative;
+}
+
+.featured-prev,
 .left-arrow {
   left: 0px;
   position: absolute;
   top: 50%;
 }
 
+.featured-next,
 .right-arrow {
   right: 0px;
-  position: absolute;
   top: 50%;
+  position: absolute;
 }
 
 .small-post {
@@ -432,6 +438,27 @@ nav i {
 
 .progress-circle.active {
   background-color: var(--main-blue);
+}
+
+.featured-carousel {
+  position: relative;
+}
+
+.featured-post {
+  display: none;
+}
+
+.featured-post.active {
+  display: block;
+}
+
+.featured-post-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 600px;
 }
 
 @media only screen and (max-width: 500px) {
