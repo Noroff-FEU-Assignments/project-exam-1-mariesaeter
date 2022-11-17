@@ -154,7 +154,7 @@ async function getFeaturedPosts() {
     const featuredTyttebaera = await response.json();
 
     // const allPosts = merge(postsPage1, postsPage2);
-
+    // retreive the specific featured posts I want
     featuredTyttebaera.splice(1, 1);
     // console.log(featuredTyttebaeraFirstSplice);
     // const featuredTyttebaera = featuredTyttebaeraFirstSplice.splice(2, 4);
@@ -182,14 +182,27 @@ const merge = (first, second) => {
   return first;
 };
 
+const options = {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
+
 function createFeatured(featuredTyttebaera) {
   featuredTyttebaera.forEach(function (post) {
     featuredCarousel.innerHTML += `<div class="nobullets featured-post">
-      <img class="featured-post-img" src="${post._embedded["wp:featuredmedia"]["0"].source_url}"> 
-      <div class="featured-post-card">
+      <img class="featured-post-img" src="${
+        post._embedded["wp:featuredmedia"]["0"].source_url
+      }"> 
+      <div class="featured-post-card box-shadow">
+      <span>${new Intl.DateTimeFormat("en-US", options).format(
+        post.date
+      )}</span>
       <h3>${post.title.rendered}</h3>
-      <p>${post.excerpt.rendered}</p>
-      <a href="blog-post.html?id=${post.id}" class="btn-featured"><button class="cta">Read more</button></a>
+      <p class="featured-excerpt">${post.excerpt.rendered}</p>
+      <a href="blog-post.html?id=${
+        post.id
+      }" class="btn-featured"><button class="cta">Read more</button></a>
       </div>
   </div>`;
   });
@@ -201,6 +214,8 @@ function createFeatured(featuredTyttebaera) {
 let current = 0;
 // let allChildren = featuredCarousel.childNodes;
 // console.log(allChildren);
+
+// go to next slide
 featuredNext.addEventListener("click", function () {
   featuredCarousel.childNodes[current].classList.remove("active");
   current++;
@@ -211,6 +226,7 @@ featuredNext.addEventListener("click", function () {
   featuredCarousel.childNodes[current].classList.add("active");
 });
 
+// go to previous slide
 featuredPrev.addEventListener("click", function () {
   featuredCarousel.childNodes[current].classList.remove("active");
   current--;
