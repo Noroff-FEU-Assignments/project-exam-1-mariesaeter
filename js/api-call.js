@@ -182,27 +182,27 @@ const merge = (first, second) => {
   return first;
 };
 
-const options = {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-};
-
 function createFeatured(featuredTyttebaera) {
   featuredTyttebaera.forEach(function (post) {
+    // to format the date correctly
+    const options = {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    };
+
+    let date = new Intl.DateTimeFormat("en-US", options).format(
+      new Date(post.date)
+    );
+
     featuredCarousel.innerHTML += `<div class="nobullets featured-post">
-      <img class="featured-post-img" src="${
-        post._embedded["wp:featuredmedia"]["0"].source_url
-      }"> 
+      <img class="featured-post-img" src="${post._embedded["wp:featuredmedia"]["0"].source_url}"> 
       <div class="featured-post-card box-shadow">
-      <span>${new Intl.DateTimeFormat("en-US", options).format(
-        post.date
-      )}</span>
+      <span class="date">${date}</span>
       <h3>${post.title.rendered}</h3>
+      <span class="orange-line"></span>
       <p class="featured-excerpt">${post.excerpt.rendered}</p>
-      <a href="blog-post.html?id=${
-        post.id
-      }" class="btn-featured"><button class="cta">Read more</button></a>
+      <a href="blog-post.html?id=${post.id}"class="cta btn-featured">Read more</a>
       </div>
   </div>`;
   });
