@@ -676,10 +676,22 @@ nav i {
   margin: 0 auto;
 }
 
-.round-about-img {
-  max-width: 42%;
-  height: 75%;
+.about-img-container {
+  width: 42%;
+}
+
+.about-img {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+}
+
+.about-img img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  object-position: 50% 50%;
   border-radius: 50%;
 }
 
