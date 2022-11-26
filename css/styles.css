@@ -57,7 +57,7 @@ body {
 main {
   position: relative;
   top: 65px;
-  margin: 2%;
+  margin: 0% 2%;
 }
 
 p {
@@ -75,12 +75,17 @@ nav a {
 }
 /* ... */
 
+h1 {
+  font-size: 3.944rem;
+}
+
 h2 {
-  font-size: 3.938rem;
+  font-size: 3.5rem;
   margin-left: 3%;
 }
 
-h3 {
+h3,
+.category-name {
   font-size: 1.833rem;
   color: var(--main-blue);
 }
@@ -139,10 +144,15 @@ input:focus {
     text-align: center;
   }
 
+  h1 {
+    font-size: 3.5rem;
+  }
+
   h2 {
     font-size: 2.833rem;
     text-align: center;
   }
+
   h3 {
     font-size: 1.5rem;
   }
@@ -170,6 +180,17 @@ input:focus {
   justify-content: center;
   align-items: center;
   width: 100%;
+}
+@media screen and (min-width: 768px) {
+  /* .wider-margin {
+    margin-left: 16.6%;
+    margin-right: 16.6%;
+  } */
+}
+
+.widest-margin {
+  margin-left: 23.4%;
+  margin-right: 23.4%;
 }
 
 .cta {
@@ -261,6 +282,43 @@ nav i {
   text-decoration: none;
 }
 
+.subnav {
+  display: none;
+  padding: 3.5% 5%;
+}
+
+.nav-blog:hover .subnav {
+  display: flex;
+  position: absolute;
+  top: 60px;
+  right: 10%;
+  background-color: var(--main-white);
+  column-gap: 5%;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+.subnav-child {
+  width: 250px;
+}
+
+.nav-blog:hover .subnav:nth-child(1) {
+  order: 1;
+}
+.nav-blog:hover .subnav:nth-child(0) {
+  order: 2;
+}
+.nav-blog:hover .subnav:nth-child(2) {
+  order: 3;
+}
+
+.subnav-child a {
+  font-family: "Lato", cursive !important;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
 .logo-img {
   max-height: 40px;
 }
@@ -274,9 +332,6 @@ nav i {
   color: var(--main-black);
 }
 
-.subnav-parent {
-  display: none;
-}
 .hamburger-menu {
   display: none;
 }
@@ -349,6 +404,10 @@ nav i {
   }
   nav a {
     font-size: 1.5em;
+  }
+
+  .nav-blog:hover .subnav {
+    display: none;
   }
 }
 
@@ -473,9 +532,9 @@ nav i {
 
 .featured-carousel-wrapper {
   position: relative;
-
   height: 600px;
 }
+
 .featured-carousel {
   margin-left: 3%;
   margin-right: 3%;
@@ -545,9 +604,19 @@ nav i {
     height: 150px;
   }
 
-  .featured-post {
+  .featured-carousel-wrapper {
     height: 525px;
+    margin-left: 0;
+    margin-right: 0;
   }
+  .featured-post {
+    display: block;
+  }
+  .featured-next,
+  .featured-prev {
+    display: none;
+  }
+
   .featured-post-img {
     height: 200px;
   }
@@ -596,3 +665,140 @@ nav i {
   transition: all 0.3s ease-in-out;
   border-radius: 5px;
 } */
+
+/* || About part - home || */
+.about-container-home {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 5%;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.round-about-img {
+  max-width: 42%;
+  height: 75%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.about-text {
+  max-width: 50%;
+}
+
+/* || CATEGORY PAGE || */
+
+.main-category-container {
+  margin: 0 auto;
+  width: 66.7%;
+  display: grid;
+  /* flex-wrap: wrap; */
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  row-gap: 5%;
+  column-gap: 5%;
+}
+
+.category-card {
+  width: 268px;
+  height: 268px;
+}
+
+.category-img {
+  /* background-image: url(/images/categories/northern-norway.jpg); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 268px;
+  height: 218px;
+}
+
+.category-name {
+  font-family: "Amatic SC", sans-serif;
+  text-align: center;
+}
+
+@media screen and (max-width: 1048px) {
+  .main-category-container {
+    column-gap: 15px;
+    row-gap: 15px;
+  }
+  .category-card {
+    width: 175px;
+    height: 175px;
+    /* flex-shrink: 3; */
+  }
+
+  .category-img {
+    width: 175px;
+    height: 135px;
+  }
+
+  .category-name {
+    font-size: 1.35rem;
+  }
+
+  .blog-container {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-category-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* || BLOG || */
+.blog-container {
+  max-width: 56%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 7%;
+  row-gap: 60px;
+}
+
+.blog-post-card {
+  width: 100%;
+}
+
+.blog-post-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin: 0;
+}
+
+.post-card {
+  margin: 0;
+  padding: 7.5%;
+}
+
+@media screen and (max-width: 1048px) {
+  .blog-container {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .blog-container {
+    max-width: 100%;
+  }
+}
+
+.hidden-post {
+  display: none;
+}
+
+.inactive {
+  border-color: var(--gray200);
+  color: var(--gray300);
+}
+
+.inactive:hover {
+  border-color: var(--gray200);
+  cursor: auto;
+}

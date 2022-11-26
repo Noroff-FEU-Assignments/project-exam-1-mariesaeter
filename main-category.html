@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="Home page of Trønder på tur" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - Trønder på tur</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- -->
+
+    <!-- Link to CSS files -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <!-- -->
+    <!-- Link to Fontawesome free kit -->
+    <script
+      src="https://kit.fontawesome.com/a2324745d3.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- -->
+  </head>
+  <body>
+    <header>
+      <nav class="flex-center navbar box-shadow">
+        <a class="logo flex-center" href="index.html"
+          ><img
+            src="images/logo.png"
+            alt="Trønder på tur logo"
+            class="logo-img"
+          />
+          <div class="logo-text">Trønder på tur</div></a
+        >
+        <ul class="nobullets flex-center nav-menu">
+          <li class="nav-item">
+            <a class="active-page nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">About</a>
+          </li>
+          <ul class="nav-blog nav-item">
+            <a class="nav-link" href="index.html">Blog</a>
+            <div class="subnav box-shadow"></div>
+          </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Contact</a>
+          </li>
+        </ul>
+
+        <button class="hamburger-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </nav>
+    </header>
+    <main class="wider-margin">
+      <section class="category-overview">
+        <h1 class="category-title"></h1>
+        <div class="main-category-container"></div>
+    </main>
+    <footer></footer>
+    <!-- Link to JS files -->
+    <script src="js/sitewide/hamburger.js" type="module"></script>
+    <script src="js/main-category.js" type="module"></script>
+  </body>
+</html>
