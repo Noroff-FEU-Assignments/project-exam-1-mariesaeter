@@ -1,4 +1,4 @@
-import { urlPosts } from "./sitewide/urls.js";
+// import { categoriesUrl } from "./sitewide/urls.js";
 
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
@@ -7,8 +7,11 @@ const id = params.get("id");
 console.log(id);
 
 const blogContainer = document.querySelector(".blog-container");
+const categoryTitle = document.querySelector(".category-title");
 
 const url = `https://feulur.com/tronderpatur/wp-json/wp/v2/posts?_embed&categories=${id}`;
+const urlCategory = `https://feulur.com/tronderpatur/wp-json/wp/v2/categories/${id}`;
+
 const morePostsBtn = document.querySelector("#more-posts-btn");
 const postCount = document.querySelector("#post-count");
 const postTotal = document.querySelector("#post-total");
@@ -84,3 +87,18 @@ function hideAndShow(posts) {
     postCount.innerHTML = posts.length - hiddenArr.length;
   });
 }
+
+// add title to the page
+async function getAllCategories() {
+  try {
+    const response = await fetch(urlCategory);
+    const category = await response.json();
+
+    console.log(category);
+
+    categoryTitle.innerHTML += `${category.name}`;
+  } catch (error) {
+    console.log(error);
+  }
+}
+getAllCategories();
