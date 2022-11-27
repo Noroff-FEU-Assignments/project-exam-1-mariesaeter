@@ -42,7 +42,7 @@ function createPostHtml(blogPost) {
 
   blogPostTitle.innerHTML = headerHtml;
 
-  headerImg.style.background = `linear-gradient(rgba(18, 20, 22, 0.4), rgba(18, 20, 22, 0.4)), url(${blogPost._embedded["wp:featuredmedia"]["0"].source_url}), center center / cover no-repeat`;
+  headerImg.style.background = `linear-gradient(rgba(18, 20, 22, 0.4), rgba(18, 20, 22, 0.4)), url(${blogPost._embedded["wp:featuredmedia"]["0"].source_url}) center center / cover no-repeat`;
   //   <div class="blog-post-header-img" >
   //     <img src="${blogPost._embedded["wp:featuredmedia"]["0"].source_url}">
   // </div></div>`;
