@@ -390,6 +390,7 @@ nav i {
   .nav-link-blog-mobile {
     display: block;
     font-weight: 600;
+    align-self: flex-start;
   }
 
   .subnav {
