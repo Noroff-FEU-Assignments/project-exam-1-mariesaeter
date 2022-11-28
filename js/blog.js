@@ -50,7 +50,7 @@ function createBlogHtml(allPosts) {
     <h3>${post.title.rendered}</h3>
     <span class="orange-line"></span>
     <p class="post-excerpt">${post.excerpt.rendered}</p>
-    <a href="blog-post.html?id=${post.id}"class="cta btn-featured">Read more</a>
+    <a href="blog-post.html?id=${post.id}"class="cta btn-featured btn-main">Read more</a>
     </div>
 </div>`;
 

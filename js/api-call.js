@@ -244,8 +244,8 @@ function createFeatured(featuredTyttebaera) {
       <span class="date">${date}</span>
       <h3>${post.title.rendered}</h3>
       <span class="orange-line"></span>
-      <p class="featured-excerpt">${post.excerpt.rendered}</p>
-      <a href="blog-post.html?id=${post.id}"class="cta btn-featured">Read more</a>
+      <div class="featured-excerpt">${post.excerpt.rendered}</div>
+      <a href="blog-post.html?id=${post.id}"class="cta btn-main btn-featured">Read more</a>
       </div>
   </div>`;
   });
@@ -269,11 +269,11 @@ function createFeaturedAbroad(featuredAbroad) {
     featuredCarouselAbroad.innerHTML += `<div class="nobullets featured-post">
       <img class="featured-post-img" src="${post._embedded["wp:featuredmedia"]["0"].source_url}"> 
       <div class="featured-post-card box-shadow">
-      <span class="date">${date}</span>
+      <div><span class="date">${date}</span>
       <h3>${post.title.rendered}</h3>
       <span class="orange-line"></span>
-      <p class="featured-excerpt">${post.excerpt.rendered}</p>
-      <a href="blog-post.html?id=${post.id}"class="cta btn-featured">Read more</a>
+      <p class="featured-excerpt">${post.excerpt.rendered}</p></div>
+      <a href="blog-post.html?id=${post.id}"class="cta btn-main btn-featured">Read more</a>
       </div>
   </div>`;
   });

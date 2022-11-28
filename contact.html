@@ -17,6 +17,7 @@
 
     <!-- Link to CSS files -->
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
     <!-- -->
     <!-- Link to Fontawesome free kit -->
     <script
@@ -38,7 +39,7 @@
         >
         <ul class="nobullets flex-center nav-menu">
           <li class="nav-item">
-            <a class="active-page nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="index.html">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="about.html">About</a>
@@ -55,7 +56,7 @@
             </div>
           </ul>
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Contact</a>
+            <a class="active-page nav-link" href="contact.html">Contact</a>
           </li>
         </ul>
 
@@ -65,30 +66,26 @@
           <span class="bar"></span>
         </button>
       </nav>
-      <!-- <section class="blog-post-header">
-        <!-- <div class="header-img">
-          <div class="blog-post-header-title">
-            <h1></h1>
+      <section class="page-header">
+        <div class="header-img contact-img">
+          <div class="h1-centered">
+            <h1>Contact</h1>
           </div>
-        </div> -->
-      <!-- </section> -->
-
-      <section class="blog-post-header">
-        <div class="blog-post-header-img">
-          <div class="blog-post-title"></div>
         </div>
       </section>
     </header>
-    <main class="blog-post-screen">
-      <h1 class="category-title"></h1>
-      <section class="blog-post-container"></section>
-
-      <section class="related-posts">
-        <h2>Related Posts</h2>
-      </section>
-      <section class="comment-posts">
-        <h2>Leave a comment</h2>
-        <form id="comment-form">
+    <main class="widest-screen">
+      <h3 id="h3-contact">
+        Reach out to me here if you have any questions or suggestions
+      </h3>
+      <div class="p-middle">
+        <p>
+          I would love to talk more about my adventures or get suggestions about
+          where I should go next.
+        </p>
+      </div>
+      <section class="contact-form-container">
+        <form id="contact-form">
           <ul class="nobullets">
             <li>
               <label for="name"
@@ -125,6 +122,23 @@
               </div>
             </li>
             <li>
+              <label for="subject"
+                >Subject<span class="required">*</span>
+                <input
+                  type="text"
+                  name="subject"
+                  id="subject"
+                  placeholder="What do you want to contact me about?"
+                />
+              </label>
+              <div class="form-error" id="subject-error">
+                <div class="message-flex error-color">
+                  <i class="fa-regular fa-circle-xmark"></i> Subject must be
+                  more than 15 characters long
+                </div>
+              </div>
+            </li>
+            <li>
               <label for="message"
                 >Message<span class="required">*</span>
                 <textarea
@@ -143,14 +157,17 @@
               </div>
             </li>
           </ul>
-          <button type="submit" class="cta btn-main center">Add comment</button>
+          <button type="submit" class="cta btn-main center">
+            Send message
+          </button>
           <div class="message-recieved"></div>
         </form>
       </section>
     </main>
     <footer></footer>
+
     <!-- Link to JS files -->
     <script src="js/sitewide/hamburger.js" type="module"></script>
-    <script src="js/blog-post.js" type="module"></script>
+    <script src="js/contact-form.js" type="module"></script>
   </body>
 </html>
