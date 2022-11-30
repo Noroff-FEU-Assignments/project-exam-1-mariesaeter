@@ -46,11 +46,13 @@ function createBlogHtml(allPosts) {
     let html = `<div class="nobullets blog-post-card hidden-post">
     <img class="post-img" src="${post._embedded["wp:featuredmedia"]["0"].source_url}">
     <div class="post-card box-shadow">
+    <div class="post-card-info">
     <span class="date">${date}</span>
     <h3>${post.title.rendered}</h3>
     <span class="orange-line"></span>
-    <p class="post-excerpt">${post.excerpt.rendered}</p>
-    <a href="blog-post.html?id=${post.id}"class="cta btn-featured btn-main">Read more</a>
+    <div class="post-excerpt">${post.excerpt.rendered}</div>
+    </div>
+    <a href="blog-post.html?id=${post.id}"class="cta btn-blog-post btn-main">Read more</a>
     </div>
 </div>`;
 

@@ -6,29 +6,38 @@ const urlCategories =
 const navBlog = document.querySelector(".nav-blog");
 
 const latestPostsCarousel = document.querySelector(".latest-carousel");
+
+const btnFeaturedTyttebaera = document.querySelector(
+  ".btn-featured-tyttebaera"
+);
+
+const btnFeaturedAbroad = document.querySelector(".btn-featured-abroad");
 // const subnav = document.querySelector(".subnav");
 
-// async function getCategories() {
-//   try {
-//     const response = await fetch(urlCategories);
-//     const categories = await response.json();
+async function getCategories() {
+  try {
+    const response = await fetch(urlCategories);
+    const categories = await response.json();
+    console.log(categories);
+    createFeaturedBtn(categories);
+  } catch (error) {
+    console.log(error);
+  }
+}
 
-//     createHtml(categories);
-//     console.log(categories);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
+getCategories();
 
-// getCategories();
+function createFeaturedBtn(categories) {
+  categories.forEach(function (category) {
+    if (category.id === 10) {
+      btnFeaturedTyttebaera.innerHTML = `<a href="sub-category.html?id=${category.id}" class="cta cta-sub">Read more posts from the Chronicles of Tyttebæra</a>`;
+    }
 
-// function createHtml(categories) {
-//   categories.forEach(function (category) {
-//     if (category.parent === 0) {
-//       subnav.innerHTML += `<ul class="subnav-parent"><a href=${category.link}>${category.name}</a></ul>`;
-//     }
-//   });
-// }
+    if (category.id === 4) {
+      btnFeaturedAbroad.innerHTML = `<a href="sub-category.html?id=${category.id}" class="cta cta-sub">Read more posts from travels abroad</a>`;
+    }
+  });
+}
 
 const latestCarousel = document.querySelector(".latest-carousel");
 const leftButton = document.querySelector(".left-arrow");
@@ -54,8 +63,8 @@ function createHtml(blogPosts) {
     latestCarousel.innerHTML += `<li class="small-post nobullets"><a class="small-post-link" href="blog-post.html?id=${post.id}">
                                         <div class="small-post-img-square"><img class="small-post-img" src="${post._embedded["wp:featuredmedia"]["0"].source_url}"> </div>
                                         <h3>${post.title.rendered}</h3></a>
-                                        
-                                        
+
+
                                     </li>`;
   });
 }
@@ -239,12 +248,13 @@ function createFeatured(featuredTyttebaera) {
     );
 
     featuredCarouselTyttebaera.innerHTML += `<div class="nobullets featured-post">
-      <img class="featured-post-img" src="${post._embedded["wp:featuredmedia"]["0"].source_url}"> 
+      <img class="featured-post-img" src="${post._embedded["wp:featuredmedia"]["0"].source_url}">
       <div class="featured-post-card box-shadow">
+      <div class="post-card-info">
       <span class="date">${date}</span>
       <h3>${post.title.rendered}</h3>
       <span class="orange-line"></span>
-      <div class="featured-excerpt">${post.excerpt.rendered}</div>
+      <div class="featured-excerpt">${post.excerpt.rendered}</div></div>
       <a href="blog-post.html?id=${post.id}"class="cta btn-main btn-featured">Read more</a>
       </div>
   </div>`;
@@ -267,12 +277,13 @@ function createFeaturedAbroad(featuredAbroad) {
     );
 
     featuredCarouselAbroad.innerHTML += `<div class="nobullets featured-post">
-      <img class="featured-post-img" src="${post._embedded["wp:featuredmedia"]["0"].source_url}"> 
+      <img class="featured-post-img" src="${post._embedded["wp:featuredmedia"]["0"].source_url}">
       <div class="featured-post-card box-shadow">
-      <div><span class="date">${date}</span>
+      <div class="post-card-info">
+      <span class="date">${date}</span>
       <h3>${post.title.rendered}</h3>
       <span class="orange-line"></span>
-      <p class="featured-excerpt">${post.excerpt.rendered}</p></div>
+      <div class="featured-excerpt">${post.excerpt.rendered}</div></div>
       <a href="blog-post.html?id=${post.id}"class="cta btn-main btn-featured">Read more</a>
       </div>
   </div>`;
@@ -280,6 +291,7 @@ function createFeaturedAbroad(featuredAbroad) {
 
   featuredCarouselAbroad.firstChild.classList.add("active");
 }
+
 // slideshow functioning!!! https://codepen.io/zachMartinez/pen/MEONMX
 
 let current = 0;

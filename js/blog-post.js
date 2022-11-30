@@ -38,7 +38,7 @@ function createPostHtml(blogPost) {
   );
 
   let headerHtml = `<div><h1>${blogPost.title.rendered}</h1>
-    <span class="date">${date}</span>`;
+    <span class="date centered-content">${date}</span>`;
 
   blogPostTitle.innerHTML = headerHtml;
 
@@ -64,6 +64,12 @@ function adjustImages() {
   const postImages = document.querySelectorAll(
     ".blog-post-container .wp-block-image"
   );
+  if (postImages.length === 4) {
+    postImages[0].classList.add("large-blog-img");
+    postImages[1].classList.add("square-blog-img");
+    postImages[2].classList.add("square-blog-img");
+    postImages[3].classList.add("square-blog-img");
+  }
   if (postImages.length === 5) {
     postImages[0].classList.add("large-blog-img");
     postImages[1].classList.add("square-blog-img");
@@ -97,6 +103,23 @@ function adjustImages() {
     postImages[5].classList.add("large-blog-img");
     postImages[6].classList.add("square-blog-img");
     postImages[7].classList.add("square-blog-img");
+  }
+
+  if (postImages.length === 10) {
+    postImages[0].classList.add("large-blog-img");
+    postImages[1].classList.add("large-blog-img");
+    postImages[2].classList.add("square-blog-img");
+    postImages[2].classList.add("medium-size-left");
+    postImages[3].classList.add("square-blog-img");
+    postImages[3].classList.add("medium-size-right");
+    postImages[4].classList.add("square-blog-img");
+    postImages[5].classList.add("square-blog-img");
+    postImages[6].classList.add("square-blog-img");
+    postImages[7].classList.add("square-blog-img");
+    postImages[8].classList.add("square-blog-img");
+    postImages[8].classList.add("medium-size-left");
+    postImages[9].classList.add("square-blog-img");
+    postImages[9].classList.add("medium-size-right");
   }
 }
 
