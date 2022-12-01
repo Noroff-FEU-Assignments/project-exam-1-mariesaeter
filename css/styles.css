@@ -85,7 +85,7 @@ nav a,
 /* ... */
 
 h1 {
-  font-size: 5.556rem;
+  font-size: 4.44rem;
 }
 
 h2 {
@@ -155,6 +155,12 @@ textarea:focus {
   outline: 2px solid var(--main-orange);
 }
 
+@media screen and (max-width: 1296px) {
+  h3 {
+    font-size: 1.833rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
   p {
     max-width: 90%;
@@ -175,7 +181,7 @@ textarea:focus {
   }
 
   h3 {
-    font-size: 1.833rem;
+    font-size: 1.633rem;
   }
 
   .container-p {
@@ -266,7 +272,8 @@ textarea:focus {
 
 .btn-blog-post {
   align-self: center;
-  margin-top: 10px;
+  position: absolute;
+  bottom: 25px;
 }
 
 .btn-main:hover {
@@ -299,14 +306,13 @@ https://codepen.io/P1N2O/pen/pyBNzX
 .loader-container.grid {
   grid-column: 2 / span 1;
   align-self: center;
-  height: 100vh;
 }
 
 .loader {
   height: 150px;
   width: 150px;
   background: linear-gradient(to right, #1e4a5c, #f4a152);
-  mask-image: url("../images/logo.svg");
+  mask-image: url("../images/logo.png");
   mask-size: contain;
   mask-repeat: no-repeat;
   margin: 0 auto;
@@ -1031,16 +1037,22 @@ nav i {
 
 /* || CATEGORY PAGE || */
 
+.category-overview {
+  width: 66.7%;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
 .main-category-container {
   margin: 0 auto;
-  width: 66.7%;
+  width: 100%;
   display: grid;
   /* flex-wrap: wrap; */
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   justify-content: center;
   row-gap: 5%;
-  column-gap: 5%;
+  column-gap: 2%;
   height: 100%;
   margin-bottom: 50px;
 }
@@ -1147,6 +1159,8 @@ nav i {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
+  min-height: 350px;
+  position: relative;
   /* margin: 0;
   padding: 15px 20px 20px;
   display: flex;
@@ -1174,7 +1188,7 @@ nav i {
   display: flex; */
 }
 
-@media screen and (max-width: 1180px) {
+@media screen and (max-width: 1296px) {
   .blog-container {
     grid-template-columns: 1fr 1fr;
     row-gap: 15px;
@@ -1182,6 +1196,11 @@ nav i {
   /* .post-card {
     height: 470px;
   } */
+
+  .post-excerpt p {
+    max-height: 100px;
+    overflow: hidden;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -1191,13 +1210,12 @@ nav i {
     row-gap: 15px;
   }
 
+  .post-excerpt p {
+    max-height: 105px;
+  }
+
   /* .post-card {
     height: 350px;
-  } */
-}
-@media screen and (max-width: 768px) {
-  /* .post-card {
-    height: 375px;
   } */
 }
 
