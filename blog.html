@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="Home page of Trønder på tur" />
+    <meta http-equiv="X-UA-Compatible" content="Blog page of Trønder på tur" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home - Trønder på tur</title>
+    <title>Blog - Trønder på tur</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -39,24 +39,28 @@
         >
         <ul class="nobullets flex-center nav-menu">
           <li class="nav-item">
-            <a class="active-page nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="index.html">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="about.html">About</a>
           </li>
           <ul class="nav-blog nav-item">
-            <a class="nav-link-blog" href="blog.html">Blog</a>
+            <a class="active-page nav-link-blog" href="blog.html">Blog</a>
             <button class="nav-link-blog-mobile">Blog</button>
 
             <div class="subnav-container box-shadow">
-              <div class="subnav"></div>
+              <div class="subnav">
+                <div class="loader-container">
+                  <div class="loader"></div>
+                </div>
+              </div>
               <li class="nobullets subnav-child">
                 <a href="blog.html">All blog posts</a>
               </li>
             </div>
           </ul>
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Contact</a>
+            <a class="nav-link" href="contact.html">Contact</a>
           </li>
         </ul>
 
@@ -67,8 +71,8 @@
         </button>
       </nav>
     </header>
-    <main class="widest-screen">
-      <h1>Blog</h1>
+    <main class="widest-screen padding-main-below-nav">
+      <h1 class="category-title">Blog</h1>
       <section>
         <ul class="blog-container">
           <div class="loader-container">
@@ -86,7 +90,7 @@
         </div>
       </section>
     </main>
-    <footer></footer>
+    <footer><p>© Marie Sæter</p></footer>
     <!-- Link to JS files -->
     <script src="js/sitewide/hamburger.js" type="module"></script>
     <script src="js/blog.js" type="module"></script>

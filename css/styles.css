@@ -58,7 +58,6 @@ main {
   position: relative;
   top: 65px;
   margin: 0% 2%;
-  min-height: 100vh;
 }
 
 footer {
@@ -66,11 +65,19 @@ footer {
   background-color: var(--blue100);
   top: 65px;
   position: relative;
+  margin-top: 50px;
 }
 
 p {
   line-height: 1.7em;
   letter-spacing: 0.02em;
+}
+
+footer p {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 h1,
@@ -188,6 +195,9 @@ textarea:focus {
     margin-left: 0 !important;
     text-align: center;
   }
+  h1.category-title {
+    text-align: center;
+  }
 }
 
 #h3-contact {
@@ -215,6 +225,10 @@ textarea:focus {
   box-shadow: 0px 10px 15px rgba(15, 37, 46, 0.15);
 }
 
+.padding-main-below-nav {
+  padding-top: 40px;
+}
+
 .centered-content {
   display: flex;
   flex-direction: column;
@@ -222,6 +236,12 @@ textarea:focus {
   align-items: center;
   width: 100%;
 }
+@media screen and (max-width: 786px) {
+  .padding-main-below-nav {
+    padding-top: 30px;
+  }
+}
+
 @media screen and (min-width: 501px) {
   .widest-screen {
     width: 80%;
@@ -1148,7 +1168,7 @@ nav i {
 
 .blog-post-card img {
   width: 100%;
-  height: 200px;
+  height: 250px;
   object-fit: cover;
   margin: 0;
 }
@@ -1234,22 +1254,39 @@ nav i {
 }
 
 /* || CONTACT PAGE || */
-#contact-form {
-  text-align: left;
+.contact-form-container {
+  max-width: 66.7%;
+  margin: 0 auto;
 }
 
-.required {
-  color: var(--main-red);
+@media screen and (max-width: 990px) {
+  .contact-form-container {
+    max-width: 80%;
+  }
 }
 
-form input,
-textarea {
-  border: solid 2px var(--gray200);
-}
+@media screen and (max-width: 678px) {
+  .contact-form-container {
+    max-width: 90%;
+  }
 
-form input:focus,
-textarea:focus {
-  border: none;
+  #contact-form {
+    text-align: left;
+  }
+
+  .required {
+    color: var(--main-red);
+  }
+
+  form input,
+  textarea {
+    border: solid 2px var(--gray200);
+  }
+
+  form input:focus,
+  textarea:focus {
+    border: none;
+  }
 }
 
 .form-error,
@@ -1262,6 +1299,7 @@ textarea:focus {
   align-items: center;
   font-size: 0.889rem;
   height: 44px;
+  margin-top: 10px;
   padding: 10px 0 10px 10px;
 }
 
@@ -1351,6 +1389,7 @@ textarea {
 }
 
 .blog-post-content {
+  padding: 30px 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: 15px;
@@ -1403,6 +1442,23 @@ textarea {
   .medium-size-right {
     grid-column: 2 / span 1;
   }
+}
+
+.related-posts {
+  padding-bottom: 30px;
+}
+
+form li {
+  padding-bottom: 20px;
+}
+
+form input,
+form textarea {
+  margin-top: 5px;
+}
+
+form textarea {
+  padding-top: 10px;
 }
 
 /* || Margins || */
