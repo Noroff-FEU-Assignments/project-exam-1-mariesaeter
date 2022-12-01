@@ -58,6 +58,7 @@ main {
   position: relative;
   top: 65px;
   margin: 0% 2%;
+  min-height: 100vh;
 }
 
 footer {
