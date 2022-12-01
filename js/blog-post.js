@@ -87,11 +87,11 @@ function adjustImages() {
   }
   if (postImages.length === 7) {
     postImages[0].classList.add("large-blog-img");
-    postImages[1].classList.add("square-blog-img");
+    postImages[1].classList.add("large-blog-img");
     postImages[2].classList.add("square-blog-img");
     postImages[3].classList.add("square-blog-img");
     postImages[4].classList.add("square-blog-img");
-    postImages[5].classList.add("large-blog-img");
+    postImages[5].classList.add("square-blog-img");
     postImages[6].classList.add("large-blog-img");
   }
   if (postImages.length === 8) {
@@ -102,7 +102,9 @@ function adjustImages() {
     postImages[4].classList.add("square-blog-img");
     postImages[5].classList.add("large-blog-img");
     postImages[6].classList.add("square-blog-img");
+    postImages[6].classList.add("medium-size-left");
     postImages[7].classList.add("square-blog-img");
+    postImages[7].classList.add("medium-size-right");
   }
 
   if (postImages.length === 10) {

@@ -33,7 +33,7 @@ function createCategoryCards(categories) {
     }
     // function for creating the html
     function createCategoryCardsHtml() {
-      mainCategoryContainer.innerHTML += `<li class="category-card nobullets box-shadow"><a href="sub-category.html?id=${category.id}"><div class="category-img"></div><div class="category-name">${category.name}</div></a></li>`;
+      mainCategoryContainer.innerHTML += `<li class="category-card nobullets box-shadow"><a href="sub-category.html?id=${category.id}"><div class="category-img"></div><div class="category-name">${category.name}</div><div class="category-overlay"></div></a></li>`;
     }
   });
   // run function to add images to the category cards, also depending on which page you are on
@@ -55,20 +55,21 @@ function addCategoryImageNorway(categories) {
       categoryImage[0].style.backgroundImage =
         "url('https://feulur.com/tronderpatur/wp-content/uploads/2022/11/hero-image.jpg')";
     }
-    // category image -- Eastern Norway
-    if (category.id === 8) {
-      categoryImage[1].style.backgroundImage =
-        "url('https://feulur.com/tronderpatur/wp-content/uploads/2022/11/post_featured_norway_hesteslipp.jpg')";
-    }
+
     // category image -- Northern Norway
     if (category.id === 5) {
-      categoryImage[2].style.backgroundImage =
+      categoryImage[1].style.backgroundImage =
         "url('https://feulur.com/tronderpatur/wp-content/uploads/2022/11/hero.jpg')";
     }
     // category image -- Trøndelag
     if (category.id === 6) {
-      categoryImage[4].style.backgroundImage =
-        "url('https://feulur.com/tronderpatur/wp-content/uploads/2022/11/hero.jpg')";
+      categoryImage[2].style.backgroundImage =
+        "url('https://feulur.com/tronderpatur/wp-content/uploads/2022/11/post_featured_norway_hesteslipp.jpg')";
+    }
+    // category image -- Western Norway
+    if (category.id === 7) {
+      categoryImage[3].style.backgroundImage =
+        "url('https://feulur.com/tronderpatur/wp-content/uploads/2020/06/2020_vestlandet_week-1_2.jpg')";
     }
   });
 }

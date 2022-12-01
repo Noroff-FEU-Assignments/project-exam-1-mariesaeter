@@ -28,47 +28,54 @@
   </head>
   <body>
     <header>
-        <nav class="flex-center navbar box-shadow">
-            <a class="logo flex-center" href="index.html"
-              ><img
-                src="images/logo.png"
-                alt="Trønder på tur logo"
-                class="logo-img"
-              />
-              <div class="logo-text">Trønder på tur</div></a
-            >
-            <ul class="nobullets flex-center nav-menu">
-              <li class="nav-item">
-                <a class="active-page nav-link" href="index.html">Home</a>
+      <nav class="flex-center navbar box-shadow">
+        <a class="logo flex-center" href="index.html"
+          ><img
+            src="images/logo.png"
+            alt="Trønder på tur logo"
+            class="logo-img"
+          />
+          <div class="logo-text">Trønder på tur</div></a
+        >
+        <ul class="nobullets flex-center nav-menu">
+          <li class="nav-item">
+            <a class="active-page nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <ul class="nav-blog nav-item">
+            <a class="nav-link-blog" href="blog.html">Blog</a>
+            <button class="nav-link-blog-mobile">Blog</button>
+
+            <div class="subnav-container box-shadow">
+              <div class="subnav"></div>
+              <li class="nobullets subnav-child">
+                <a href="blog.html">All blog posts</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
-              </li>
-              <ul class="nav-blog nav-item">
-                <a class="nav-link-blog" href="blog.html">Blog</a>
-                <button class="nav-link-blog-mobile">Blog</button>
-                
-              <div class="subnav-container box-shadow">
-                <div class="subnav"></div>
-                <li class="nobullets subnav-child"><a href="blog.html">All blog posts</a></li>
-              </div>
-              </ul>
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Contact</a>
-              </li>
-            </ul>
-    
-            <button class="hamburger-menu">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
-            </button>
-          </nav>
+            </div>
+          </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Contact</a>
+          </li>
+        </ul>
+
+        <button class="hamburger-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </nav>
     </header>
     <main class="wider-margin">
       <section class="category-overview">
         <h1 class="category-title"></h1>
-        <div class="main-category-container"></div>
+        <div class="main-category-container">
+          <div class="loader-container grid">
+            <div class="loader"></div>
+          </div>
+        </div>
+      </section>
     </main>
     <footer></footer>
     <!-- Link to JS files -->

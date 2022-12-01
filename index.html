@@ -47,11 +47,17 @@
           <ul class="nav-blog nav-item">
             <a class="nav-link-blog" href="blog.html">Blog</a>
             <button class="nav-link-blog-mobile">Blog</button>
-            
-          <div class="subnav-container box-shadow">
-            <div class="subnav"></div>
-            <li class="nobullets subnav-child"><a href="blog.html">All blog posts</a></li>
-          </div>
+
+            <div class="subnav-container box-shadow">
+              <div class="subnav">
+                <div class="loader-container">
+                  <div class="loader"></div>
+                </div>
+              </div>
+              <li class="nobullets subnav-child">
+                <a href="blog.html">All blog posts</a>
+              </li>
+            </div>
           </ul>
           <li class="nav-item">
             <a class="nav-link" href="contact.html">Contact</a>
@@ -66,95 +72,153 @@
       </nav>
       <div class="hero-img">
         <div class="hero-text">
-        <h1 class="h1-white">Trønder på tur</h1>
+          <h1 class="h1-white">Trønder på tur</h1>
 
-        <div class="search centered-content">
-          <label class="search-label" for="search-site">
-            Check if I’ve been where you want to go</label
-          >
-          <div class="flex-center">
-            <input type="search" id="search-site" name="search" placeholder="Try to search for a destination">
-            <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+          <div class="search centered-content">
+            <label class="search-label" for="search-site">
+              Check if I've been where you want to go</label
+            >
+            <div class="flex-center">
+              <input
+                type="search"
+                id="search-site"
+                name="search"
+                placeholder="Try to search for a destination"
+              />
+              <button class="search-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
           </div>
-          </div>
+        </div>
       </div>
     </header>
     <main>
-      
       <section class="latest-post">
-        <h2>Latest adventures</h2>
+        <h2 class="left-margin-h2">Latest adventures</h2>
         <div class="carousel-wrapper latest-carousel-wrapper">
-          <div class="loader-container"></div>
+          <!-- <img src = "/images/logo.svg" alt="trønder på tur logo"/> -->
+
           <ul class="latest-carousel carousel-main" id="latest-carousel">
+            <div class="loader-container">
+              <div class="loader"></div>
+            </div>
           </ul>
           <div class="latest-button-wrapper slides-button-wrapper">
-            <button class="left-arrow latest-prev"><i class="fa-solid fa-circle-arrow-left"></i></button>
-            <button class="right-arrow latest-next"><i class="fa-solid fa-circle-arrow-right"></i></button>
+            <button class="left-arrow latest-prev">
+              <i class="fa-solid fa-circle-arrow-left"></i>
+            </button>
+            <button class="right-arrow latest-next">
+              <i class="fa-solid fa-circle-arrow-right"></i>
+            </button>
           </div>
           <div class="progress">
             <button class="progress-circle active" id="progress-1"></button>
             <button class="progress-circle" id="progress-2"></button>
           </div>
-          
         </div>
         <a href="blog.html" class="cta cta-sub">View all posts</a>
-<!-- 
+        <!-- 
       <button class="cta cta-sub">View all posts</button> -->
-    </section>
+      </section>
 
-    <section class="featured-tyttebaera">
-      <h2>Featured from the Chronicles of Tyttebæra</h2>
-      <div class="container-p">
-      <p>I bought myself a little red car during fall 2018 with a dream to make tons of adventures. Here you can explore some of the trips me and my car have made.</p>
-      </div>
-      <div class="featured-carousel-wrapper">
-        <div class="loader-container"></div>
-        <div class="featured-carousel" id="featured-carousel-tyttebaera">
+      <section class="featured-tyttebaera">
+        <h2 class="left-margin-h2">
+          Featured from the Chronicles of Tyttebæra
+        </h2>
+        <div class="container-p">
+          <p>
+            I bought myself a little red car during fall 2018 with a dream to
+            make tons of adventures. Here you can explore some of the trips me
+            and my car have made.
+          </p>
         </div>
-        <div class="featured-button-wrapper slides-button-wrapper">
-          <button class="featured-prev"><i class="fa-solid fa-circle-arrow-left"></i></button>
-          <button class="featured-next" ><i class="fa-solid fa-circle-arrow-right"></i></button>
+        <div class="featured-carousel-wrapper">
+          <div class="featured-carousel" id="featured-carousel-tyttebaera">
+            <div class="loader-container">
+              <div class="loader"></div>
+            </div>
+          </div>
+          <div class="featured-button-wrapper slides-button-wrapper">
+            <button class="featured-prev">
+              <i class="fa-solid fa-circle-arrow-left"></i>
+            </button>
+            <button class="featured-next">
+              <i class="fa-solid fa-circle-arrow-right"></i>
+            </button>
+          </div>
+          <div class="progress">
+            <button
+              class="featured-progress-circle active"
+              onclick="currentFeatured(1)"
+            ></button>
+            <button
+              class="featured-progress-circle"
+              onclick="currentFeatured(2)"
+            ></button>
+            <button
+              class="featured-progress-circle"
+              onclick="currentFeatured(3)"
+            ></button>
+          </div>
         </div>
-        <div class="progress">
-          <button class="featured-progress-circle active" onclick="currentFeatured(1)"></button>
-          <button class="featured-progress-circle" onclick="currentFeatured(2)"></button>
-          <button class="featured-progress-circle" onclick="currentFeatured(3)"></button>
+        <div class="btn-featured-tyttebaera"></div>
+      </section>
+      <section class="featured-abroad">
+        <h2 class="left-margin-h2">Featured from Traveling Abroad</h2>
+        <div class="featured-carousel-wrapper">
+          <div class="featured-carousel" id="featured-carousel-abroad">
+            <div class="loader-container">
+              <div class="loader"></div>
+            </div>
+          </div>
+          <div class="featured-button-wrapper slides-button-wrapper">
+            <button class="featured-prev" id="abroad-prev">
+              <i class="fa-solid fa-circle-arrow-left"></i>
+            </button>
+            <button class="featured-next" id="abroad-next">
+              <i class="fa-solid fa-circle-arrow-right"></i>
+            </button>
+          </div>
+          <div class="progress">
+            <button
+              class="featured-progress-circle active"
+              onclick="currentFeatured(1)"
+            ></button>
+            <button
+              class="featured-progress-circle"
+              onclick="currentFeatured(2)"
+            ></button>
+            <button
+              class="featured-progress-circle"
+              onclick="currentFeatured(3)"
+            ></button>
+          </div>
         </div>
-      </div>
-      <div class="btn-featured-tyttebaera"></div>
-    
-  </section>
-  <section class="featured-abroad">
-    <h2>Featured from Traveling Abroad</h2>
-    <div class="featured-carousel-wrapper">
-      <div class="loader-container"></div>
-      <div class="featured-carousel" id="featured-carousel-abroad">
-      </div>
-      <div class="featured-button-wrapper slides-button-wrapper">
-        <button class="featured-prev" id="abroad-prev"><i class="fa-solid fa-circle-arrow-left"></i></button>
-        <button class="featured-next" id="abroad-next" ><i class="fa-solid fa-circle-arrow-right"></i></button>
-      </div>
-      <div class="progress">
-        <button class="featured-progress-circle active" onclick="currentFeatured(1)"></button>
-        <button class="featured-progress-circle" onclick="currentFeatured(2)"></button>
-        <button class="featured-progress-circle" onclick="currentFeatured(3)"></button>
-      </div>
-    </div>
-    <div class="btn-featured-abroad"></div>
-   
-</section>
-<section class="about-container-home box-shadow">
-  <div class="about-img-container">
-  <div class="about-img">
-  <img src="images/about-header.jpg" alt="me taking a picture in fornt of my red car">
-  </div></div>
-  <div class="about-text">
-  <h2>Hi,I'm Marie!</h2>
-  
-  <p class="p-about">This blog features my adventures as a traveller, mostly by car, but also other trips. I'm a traveller stationed in Trondheim, Norway, who loves to sit behind the wheel and go on long roadtrips. I got my driver license in 2018, and since then I've laid over 50 000 km by car behind me.</p>
-  <a>Learn more about me here --></a>
-</div>
-</section>
+        <div class="btn-featured-abroad"></div>
+      </section>
+      <section class="about-container-home box-shadow">
+        <div class="about-img-container">
+          <div class="about-img">
+            <img
+              src="images/about-header.jpg"
+              alt="me taking a picture in fornt of my red car"
+            />
+          </div>
+        </div>
+        <div class="about-text">
+          <h2>Hi,I'm Marie!</h2>
+
+          <p class="p-about">
+            This blog features my adventures as a traveller, mostly by car, but
+            also other trips. I'm a traveller stationed in Trondheim, Norway,
+            who loves to sit behind the wheel and go on long roadtrips. I got my
+            driver license in 2018, and since then I've laid over 50 000 km by
+            car behind me.
+          </p>
+          <a href="about.html" class="link">Learn more about me here --></a>
+        </div>
+      </section>
       <!-- <div class="latest-carousel-wrapper">
         
         </div>

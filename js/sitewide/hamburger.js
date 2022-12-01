@@ -62,7 +62,7 @@ getSubCategories();
 function createHtmlList(categories) {
   // subnavContainer.innerHTML += `<li class="nobullets subnav-child"><a href="blog.html">All blog posts</a></li>`;
   categories.forEach(function (category) {
-    if (category.parent === 0) {
+    if (category.parent === 0 && !(category.id === 1)) {
       subnav.innerHTML += `<ul class="subnav-parent>"><a href="main-category.html?id=${category.id}" class="nav-link">${category.name}</a></ul>`;
     }
   });
