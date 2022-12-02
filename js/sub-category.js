@@ -99,6 +99,7 @@ async function getAllCategories() {
     console.log(category);
 
     categoryTitle.innerHTML += `${category.name}`;
+    document.title = `${category.name} - Trønder på Tur`;
   } catch (error) {
     console.log(error);
   }

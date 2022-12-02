@@ -41,6 +41,7 @@ function createPostHtml(blogPost) {
     <span class="date centered-content">${date}</span>`;
 
   blogPostTitle.innerHTML = headerHtml;
+  document.title = `${blogPost.title.rendered} - Trønder på Tur`;
 
   headerImg.style.background = `linear-gradient(rgba(18, 20, 22, 0.4), rgba(18, 20, 22, 0.4)), url(${blogPost._embedded["wp:featuredmedia"]["0"].source_url}) center center / cover no-repeat`;
   //   <div class="blog-post-header-img" >
@@ -64,6 +65,13 @@ function adjustImages() {
   const postImages = document.querySelectorAll(
     ".blog-post-container .wp-block-image"
   );
+  if (postImages.length === 3) {
+    postImages[0].classList.add("square-blog-img");
+    postImages[0].classList.add("medium-size-left");
+    postImages[1].classList.add("square-blog-img");
+    postImages[1].classList.add("medium-size-right");
+    postImages[2].classList.add("large-blog-img");
+  }
   if (postImages.length === 4) {
     postImages[0].classList.add("large-blog-img");
     postImages[1].classList.add("square-blog-img");
@@ -105,6 +113,22 @@ function adjustImages() {
     postImages[6].classList.add("medium-size-left");
     postImages[7].classList.add("square-blog-img");
     postImages[7].classList.add("medium-size-right");
+  }
+
+  if (postImages.length === 9) {
+    postImages[0].classList.add("square-blog-img");
+    postImages[0].classList.add("medium-size-left");
+    postImages[1].classList.add("square-blog-img");
+    postImages[1].classList.add("medium-size-right");
+    postImages[2].classList.add("large-blog-img");
+    postImages[3].classList.add("square-blog-img");
+    postImages[4].classList.add("square-blog-img");
+    postImages[5].classList.add("square-blog-img");
+    postImages[6].classList.add("square-blog-img");
+    postImages[7].classList.add("square-blog-img");
+    postImages[7].classList.add("medium-size-left");
+    postImages[8].classList.add("square-blog-img");
+    postImages[8].classList.add("medium-size-right");
   }
 
   if (postImages.length === 10) {

@@ -39,10 +39,13 @@ function createCategoryCards(categories) {
   // run function to add images to the category cards, also depending on which page you are on
   if (/id=3/.test(window.location.href)) {
     categoryTitle.innerHTML = "Norway";
+    document.title = `Norway - Trønder på Tur`;
     addCategoryImageNorway(categories);
   }
   if (/id=4/.test(window.location.href)) {
     categoryTitle.innerHTML = "Abroad";
+    document.title = `Abroad - Trønder på Tur`;
+
     addCategoryImageAbroad(categories);
   }
 }
