@@ -153,6 +153,13 @@ textarea {
   width: 100%;
 }
 
+input[type="text"],
+input[type="email"],
+input[type="search"],
+textarea[type="text"] {
+  font-size: 0.887rem;
+}
+
 label {
   color: var(--gray400);
 }
@@ -235,6 +242,24 @@ textarea:focus {
   align-items: center;
   width: 100%;
 }
+
+/* |Overlays on hover|*/
+.overlay {
+  background: linear-gradient(rgba(18, 20, 22, 0.3), rgba(18, 20, 22, 0.3));
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transition: 1s ease;
+}
+.category-card a:hover .overlay {
+  opacity: 1;
+}
+
+.category-overlay {
+  width: 268px;
+  height: 218px;
+}
+/* ---- */
 @media screen and (max-width: 786px) {
   .padding-main-below-nav {
     padding-top: 30px;
@@ -1084,19 +1109,6 @@ nav i {
   position: relative;
 }
 
-.category-overlay {
-  background: linear-gradient(rgba(18, 20, 22, 0.3), rgba(18, 20, 22, 0.3));
-  opacity: 0;
-  width: 268px;
-  height: 218px;
-  position: absolute;
-  top: 0;
-  transition: 1s ease;
-}
-.category-card a:hover .category-overlay {
-  opacity: 1;
-}
-
 .category-img {
   /* background-image: url(/images/categories/northern-norway.jpg); */
   background-repeat: no-repeat;
@@ -1128,13 +1140,8 @@ nav i {
   }
 
   .category-overlay {
-    background: linear-gradient(rgba(18, 20, 22, 0.3), rgba(18, 20, 22, 0.3));
-    opacity: 0;
     width: 175px;
     height: 135px;
-    position: absolute;
-    top: 0;
-    transition: 1s ease;
   }
 
   .category-name {

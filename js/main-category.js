@@ -33,7 +33,7 @@ function createCategoryCards(categories) {
     }
     // function for creating the html
     function createCategoryCardsHtml() {
-      mainCategoryContainer.innerHTML += `<li class="category-card nobullets box-shadow"><a href="sub-category.html?id=${category.id}"><div class="category-img"></div><div class="category-name">${category.name}</div><div class="category-overlay"></div></a></li>`;
+      mainCategoryContainer.innerHTML += `<li class="category-card nobullets box-shadow"><a href="sub-category.html?id=${category.id}"><div class="category-img"></div><div class="category-name">${category.name}</div><div class="overlay category-overlay"></div></a></li>`;
     }
   });
   // run function to add images to the category cards, also depending on which page you are on
