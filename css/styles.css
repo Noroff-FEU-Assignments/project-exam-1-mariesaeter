@@ -42,10 +42,6 @@
 
 html {
   font-size: 18px;
-
-  /* font-size: calc(15px + 0.390625vw); */
-  /* Article about using calc() for responsive font-sizes 
-  https://matthewjamestaylor.com/responsive-font-size */
 }
 /* || Typography */
 body {
@@ -281,10 +277,6 @@ textarea:focus {
     width: 70%;
     margin: 0 auto;
   }
-
-  /* .wider-screen {
-    width: ;
-  } */
 }
 
 @media screen and (min-width: 1049px) {
@@ -383,16 +375,6 @@ https://codepen.io/P1N2O/pen/pyBNzX
   top: 50%;
   transform: translateY(-50%);
 }
-/* .loader-container img path {
-  fill: var(--main-blue);
-} */
-/* .loader {
-  background-repeat: no-repeat;
-  fill: linear-gradient(90deg, #1e4a5c, #f4a152);
-  width: 100px;
-  height: 100px;
-  animation: colorchange 2s ease infinite;
-} */
 
 /* || different colors on elements || */
 .h1-white {
@@ -505,20 +487,6 @@ nav i {
   }
 }
 
-/* .subnav-parent:last-of-type {
-  order: 1;
-} */
-
-/* .subnav:nth-child(1) {
-  order: 2;
-}
-.subnav:nth-child(0) {
-  order: 3;
-}
-.subnav:nth-child(2) {
-  order: 1;
-} */
-
 .subnav-child a {
   font-family: "Lato", cursive !important;
   font-size: 1rem;
@@ -586,19 +554,11 @@ nav i {
     transition: 0.3s;
     background-color: var(--main-white);
   }
-  /*
-  .nav-blog.active:hover .subnav {
-    pointer-events: none;
-  }
-*/
+
   .nav-blog {
     display: flex;
     flex-direction: column;
   }
-  /*
-  .nav-blog:hover .subnav {
-    pointer-events: none;
-  } */
 
   .hamburger-menu {
     display: flex;
@@ -680,8 +640,6 @@ nav i {
 }
 
 .latest-carousel {
-  /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
-  /* margin: 0 auto; */
   column-gap: 30px;
 }
 
@@ -706,25 +664,6 @@ nav i {
 }
 
 @media screen and (min-width: 500px) and (max-width: 990px) {
-  /* .latest-button-wrapper {
-    display: none;
-  }
-  .progress {
-    display: none;
-  }
-  .latest-slide-1.active,
-  .latest-slide-2 {
-    display: flex;
-    column-gap: 20px;
-    height: 100%;
-  }
-  .carousel-main {
-    flex-direction: column;
-    row-gap: 20px;
-    align-items: center;
-    margin: 0 auto;
-  } */
-
   .latest-slide-1.active,
   .latest-slide-2.active {
     display: grid;
@@ -755,15 +694,7 @@ nav i {
     right: 0;
   }
 }
-/* @media screen and (min-width: 700px) and (max-width: 990px) {
-  .latest-carousel .small-post {
-    max-width: 150px;
-  }
-  .latest-carousel .small-post-img {
-    width: 150px;
-    height: 150px;
-  }
-} */
+
 @media screen and (min-width: 500px) and (max-width: 700px) {
   .latest-carousel .small-post {
     max-width: 150px;
@@ -783,33 +714,6 @@ nav i {
   }
 }
 
-/* @media screen and (max-width: 700px) {
-  .latest-button-wrapper {
-    display: none;
-  }
-  .progress {
-    display: none;
-  }
-  .latest-slide-1.active,
-  .latest-slide-2 {
-    display: flex;
-    column-gap: 20px;
-    height: 100%;
-  }
-  .carousel-main {
-    flex-direction: column;
-    row-gap: 20px;
-    align-items: center;
-    margin: 0 auto;
-  }
-  .latest-slide-1.active,
-  .latest-slide-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 20px;
-    column-gap: 20px;
-  }
-} */
 @media screen and (max-width: 500px) {
   .latest-button-wrapper {
     display: none;
@@ -848,19 +752,6 @@ nav i {
 .latest-post {
   position: relative;
 }
-/* position: absolute;
-  left: 0;
-  right: 0;
-  width: 180%; */
-
-/* .latest-button-wrapper {
-   display: flex;
-  justify-content: space-between;
-
-  width: 100%;
-  height: 100%;
-  align-items: center; 
-} */
 
 .featured-button-wrapper {
   position: relative;
@@ -872,32 +763,9 @@ nav i {
   right: 0;
 }
 
-/* .featured-prev,
-.left-arrow {
-  left: 0px;
-  position: absolute;
-  top: 50%;
-}
-
-.featured-next,
-.right-arrow {
-  right: 0px;
-  top: 50%;
-  position: absolute;
-} */
-
 .small-post {
   max-width: 200px;
-
-  /* display: inline-block; */
-  /* flex-direction: column; */
 }
-
-/* .small-post-img-square {
-  width: 200px;
-  height: 200px;
-  overflow: hidden;
-} */
 
 .small-post-img {
   object-fit: cover;
@@ -1067,10 +935,6 @@ nav i {
   }
 
   .featured-post-card {
-    /* left: 0;
-    bottom: 0;
-    height: 62%;
-    max-width: 100%; */
     margin: 0;
     padding: 15px 25px 25px;
     display: flex;
@@ -1095,43 +959,6 @@ nav i {
     max-width: 50%;
   }
 }
-/* .latest-posts-container {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media only screen and (min-width: 500px) and (max-width: 768px) {
-  .latest-posts-container {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-  .latest-posts-container {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-@media only screen and (min-width: 1023px) and (max-width: 1300px) {
-  .latest-posts-container {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-} */
-
-/* .arrow-left {
-  background-color: var(--main-blue);
-  width: 32px;
-  height: 32px;
-  border-radius: 50px;
-}
-
-.bar-white {
-  background-color: var(--main-white);
-  width: 25px;
-  height: 3px;
-  transition: all 0.3s ease-in-out;
-  border-radius: 5px;
-} */
 
 /* || About part - home || */
 .about-container-home {
@@ -1292,7 +1119,6 @@ nav i {
 }
 
 .category-img {
-  /* background-image: url(/images/categories/northern-norway.jpg); */
   background-repeat: no-repeat;
   background-size: cover;
   width: 268px;
@@ -1313,7 +1139,6 @@ nav i {
   .category-card {
     width: 175px;
     height: 175px;
-    /* flex-shrink: 3; */
   }
 
   .category-img {
@@ -1371,13 +1196,6 @@ nav i {
   row-gap: 10px;
   min-height: 350px;
   position: relative;
-  /* margin: 0;
-  padding: 15px 20px 20px;
-  display: flex;
-  flex-direction: column;
-  row-gap: 15px;
-  height: 400px;*/
-  /* justify-content: space-between; */
 }
 
 .post-card h3 {
@@ -1395,10 +1213,6 @@ nav i {
   display: block;
   width: 100%;
   text-align: center;
-  /* position: relative;
-  left: 50%;
-  transform: translateY(-50%);
-  display: flex; */
 }
 
 @media screen and (max-width: 1296px) {
@@ -1406,9 +1220,6 @@ nav i {
     grid-template-columns: 1fr 1fr;
     row-gap: 15px;
   }
-  /* .post-card {
-    height: 470px;
-  } */
 
   .post-excerpt p {
     max-height: 100px;
@@ -1426,10 +1237,6 @@ nav i {
   .post-excerpt p {
     max-height: 105px;
   }
-
-  /* .post-card {
-    height: 350px;
-  } */
 }
 
 .hidden-post {
@@ -1551,13 +1358,9 @@ textarea {
   right: 0;
   bottom: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   z-index: 199;
   display: block;
-
-  /* grid-column: 1 / span all;
-  max-width: 100%;
-  max-height: max-content; */
 }
 
 .large-blog-img.active img {
@@ -1569,9 +1372,9 @@ textarea {
 }
 
 .square-blog-img.active img {
-  top: 5vh;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, 0%);
+  transform: translate(-50%, -50%);
   object-fit: contain;
   max-height: 90vh;
 }
