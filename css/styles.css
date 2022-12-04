@@ -1401,7 +1401,7 @@ textarea {
 }
 .square-blog-img {
   max-width: 100%;
-  max-height: max-content;
+
   position: relative;
   padding-bottom: 100%;
 }

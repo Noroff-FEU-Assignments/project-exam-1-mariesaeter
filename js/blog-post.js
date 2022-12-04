@@ -43,7 +43,7 @@ function createPostHtml(blogPost) {
   // add the blogpost title as the title of the html document
   document.title = `${blogPost.title.rendered} | Trønder på Tur`;
 
-  headerImg.style.background = `linear-gradient(rgba(18, 20, 22, 0.4), rgba(18, 20, 22, 0.4)), url(${blogPost._embedded["wp:featuredmedia"]["0"].source_url}) center center / cover no-repeat`;
+  headerImg.style.background = `linear-gradient(rgba(18, 20, 22, 0.6), rgba(18, 20, 22, 0.6)), url(${blogPost._embedded["wp:featuredmedia"]["0"].source_url}) center center / cover no-repeat`;
 
   let html = `<div class="blog-post-content">${blogPost.content.rendered}</div>
   `;
