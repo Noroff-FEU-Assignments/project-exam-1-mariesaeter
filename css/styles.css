@@ -1358,7 +1358,7 @@ textarea {
   right: 0;
   bottom: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   z-index: 199;
   display: block;
 }
@@ -1372,11 +1372,9 @@ textarea {
 }
 
 .square-blog-img.active img {
-  height: 100%;
-  position: absolute;
-  top: 50%;
+  top: 5vh;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0%);
   object-fit: contain;
   max-height: 90vh;
 }
