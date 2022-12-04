@@ -5,23 +5,15 @@ const morePostsBtn = document.querySelector("#more-posts-btn");
 const postCount = document.querySelector("#post-count");
 const postTotal = document.querySelector("#post-total");
 
-// const merge = (first, second) => {
-//   for (let i = 0; i < second.length; i++) {
-//     first.push(second[i]);
-//   }
-
-//   return first;
-// };
-
 // retrieve all posts
 async function getAllBlogPosts() {
   try {
     const response = await fetch(urlPosts);
     const allPosts = await response.json();
 
+    // show how many posts there are in total
     postTotal.innerHTML = allPosts.length;
 
-    console.log(allPosts);
     blogContainer.innerHTML = "";
     createBlogHtml(allPosts);
   } catch (error) {
@@ -31,7 +23,9 @@ async function getAllBlogPosts() {
 
 getAllBlogPosts();
 
+// create html for wach blogpost
 function createBlogHtml(allPosts) {
+  // format the date correctly
   const options = {
     year: "numeric",
     month: "long",
@@ -44,7 +38,7 @@ function createBlogHtml(allPosts) {
     );
 
     let html = `<div class="nobullets blog-post-card hidden-post">
-    <img class="post-img" src="${post._embedded["wp:featuredmedia"]["0"].source_url}">
+    <img class="post-img" src="${post._embedded["wp:featuredmedia"]["0"].source_url}" alt="${post.title.rendered}">
     <div class="post-card box-shadow">
     <div class="post-card-info">
     <span class="date">${date}</span>
@@ -79,11 +73,12 @@ function hideAndShow(allPosts) {
     hiddenArr
       .splice(0, 10)
       .forEach((elem) => elem.classList.remove("hidden-post"));
-    // make button inactive
+    // make button inactive when the array is 0
     if (hiddenArr.length === 0) {
       morePostsBtn.disabled = true;
       morePostsBtn.classList.add("inactive");
     }
+    // display the count
     postCount.innerHTML = allPosts.length - hiddenArr.length;
   });
 }

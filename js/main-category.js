@@ -3,16 +3,15 @@ const mainCategoryContainer = document.querySelector(
   ".main-category-container"
 );
 const categoryTitle = document.querySelector(".category-title");
-const mediaUrl = "https://feulur.com/tronderpatur/wp-json/wp/v2/media/";
 import { categoriesUrl } from "./sitewide/urls.js";
 
+// api call for retrieving all categories
 async function getSubCategoriesCategoryPage() {
   try {
     const response = await fetch(categoriesUrl);
     const categories = await response.json();
 
     mainCategoryContainer.innerHTML = "";
-    console.log(categories);
     createCategoryCards(categories);
   } catch (error) {
     console.log(error);
@@ -21,6 +20,7 @@ async function getSubCategoriesCategoryPage() {
 
 getSubCategoriesCategoryPage();
 
+// function for creating the category cards
 function createCategoryCards(categories) {
   categories.forEach(function (category) {
     // find out which main category you are on (/id=3/) and the sub-categories inside the main category (Norway - parent category 3, Abroad - parent category 4)
@@ -38,18 +38,21 @@ function createCategoryCards(categories) {
   });
   // run function to add images to the category cards, also depending on which page you are on
   if (/id=3/.test(window.location.href)) {
+    // add page heading and document title
     categoryTitle.innerHTML = "Norway";
-    document.title = `Norway - Trønder på Tur`;
+    document.title = `Norway | Trønder på Tur`;
     addCategoryImageNorway(categories);
   }
   if (/id=4/.test(window.location.href)) {
+    // add page heading and document title
     categoryTitle.innerHTML = "Abroad";
-    document.title = `Abroad - Trønder på Tur`;
+    document.title = `Abroad | Trønder på Tur`;
 
     addCategoryImageAbroad(categories);
   }
 }
 
+// function for adding the images to correct category (Norway)
 function addCategoryImageNorway(categories) {
   let categoryImage = document.querySelectorAll(".category-img");
   categories.forEach(function (category) {
@@ -77,6 +80,7 @@ function addCategoryImageNorway(categories) {
   });
 }
 
+// function for adding the images to correct category (Norway)
 function addCategoryImageAbroad(categories) {
   let categoryImage = document.querySelectorAll(".category-img");
   categories.forEach(function (category) {

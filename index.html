@@ -30,22 +30,6 @@
       crossorigin="anonymous"
     ></script>
     <!-- -->
-    <!-- Hotjar Tracking Code for Trønder på Tur -->
-    <script>
-      (function (h, o, t, j, a, r) {
-        h.hj =
-          h.hj ||
-          function () {
-            (h.hj.q = h.hj.q || []).push(arguments);
-          };
-        h._hjSettings = { hjid: 3273322, hjsv: 6 };
-        a = o.getElementsByTagName("head")[0];
-        r = o.createElement("script");
-        r.async = 1;
-        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-        a.appendChild(r);
-      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
-    </script>
   </head>
   <body>
     <header>
@@ -119,12 +103,6 @@
         <h2 class="left-margin-h2">Latest adventures</h2>
         <div class="carousel-wrapper latest-carousel-wrapper">
           <!-- <img src = "/images/logo.svg" alt="trønder på tur logo"/> -->
-
-          <ul class="latest-carousel carousel-main" id="latest-carousel">
-            <div class="loader-container">
-              <div class="loader"></div>
-            </div>
-          </ul>
           <div class="latest-button-wrapper slides-button-wrapper">
             <button class="left-arrow latest-prev">
               <i class="fa-solid fa-circle-arrow-left"></i>
@@ -133,6 +111,19 @@
               <i class="fa-solid fa-circle-arrow-right"></i>
             </button>
           </div>
+          <ul class="latest-carousel carousel-main" id="latest-carousel">
+            <li class="latest-slide-1 active">
+              <div class="loader-container">
+                <div class="loader"></div>
+              </div>
+            </li>
+            <li class="latest-slide-2">
+              <div class="loader-container">
+                <div class="loader"></div>
+              </div>
+            </li>
+          </ul>
+
           <div class="progress">
             <button class="progress-circle active" id="progress-1"></button>
             <button class="progress-circle" id="progress-2"></button>
@@ -168,20 +159,6 @@
               <i class="fa-solid fa-circle-arrow-right"></i>
             </button>
           </div>
-          <div class="progress">
-            <button
-              class="featured-progress-circle active"
-              onclick="currentFeatured(1)"
-            ></button>
-            <button
-              class="featured-progress-circle"
-              onclick="currentFeatured(2)"
-            ></button>
-            <button
-              class="featured-progress-circle"
-              onclick="currentFeatured(3)"
-            ></button>
-          </div>
         </div>
         <div class="btn-featured-tyttebaera"></div>
       </section>
@@ -200,20 +177,6 @@
             <button class="featured-next" id="abroad-next">
               <i class="fa-solid fa-circle-arrow-right"></i>
             </button>
-          </div>
-          <div class="progress">
-            <button
-              class="featured-progress-circle active"
-              onclick="currentFeatured(1)"
-            ></button>
-            <button
-              class="featured-progress-circle"
-              onclick="currentFeatured(2)"
-            ></button>
-            <button
-              class="featured-progress-circle"
-              onclick="currentFeatured(3)"
-            ></button>
           </div>
         </div>
         <div class="btn-featured-abroad"></div>
@@ -240,31 +203,11 @@
           <a href="about.html" class="link">Learn more about me here --></a>
         </div>
       </section>
-      <!-- <div class="latest-carousel-wrapper">
-        
-        </div>
-        <ul class="latest-carousel">
-
-        </ul>
-        <div class="latest-button-wrapper">
-          <button class="left-arrow"><i class="fa-solid fa-circle-arrow-left"></i></button>
-          <button class="right-arrow"><i class="fa-solid fa-circle-arrow-right"></i></button>
-        </div>
-      </div> -->
-      <!-- <section class="section-latest-posts flex-center">
-      
-     <button class="left-arrow"><i class="fa-solid fa-circle-arrow-left"></i></button>
-      
-      <div class="latest-posts-container">
-        
-      </div>
-      <button class="right-arrow"><i class="fa-solid fa-circle-arrow-right"></i></button>
-      </section> -->
     </main>
     <footer><p>© Marie Sæter</p></footer>
 
     <!-- Link to JS files -->
     <script src="js/sitewide/hamburger.js" type="module"></script>
-    <script src="js/api-call.js" type="module"></script>
+    <script src="js/index.js" type="module"></script>
   </body>
 </html>

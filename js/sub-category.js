@@ -1,27 +1,23 @@
-// import { categoriesUrl } from "./sitewide/urls.js";
-
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
-console.log(id);
-
-const blogContainer = document.querySelector(".blog-container");
-const categoryTitle = document.querySelector(".category-title");
-
 const url = `https://feulur.com/tronderpatur/wp-json/wp/v2/posts?_embed&categories=${id}`;
 const urlCategory = `https://feulur.com/tronderpatur/wp-json/wp/v2/categories/${id}`;
 
+const blogContainer = document.querySelector(".blog-container");
+const categoryTitle = document.querySelector(".category-title");
 const morePostsBtn = document.querySelector("#more-posts-btn");
 const postCount = document.querySelector("#post-count");
 const postTotal = document.querySelector("#post-total");
 
+// function for retrieving all blog posts through api call
 async function getAllBlogPosts() {
   try {
     const response = await fetch(url);
     const posts = await response.json();
 
-    console.log(posts);
+    // add total number of posts to counter
     postTotal.innerHTML = posts.length;
     blogContainer.innerHTML = "";
     createBlogHtml(posts);
@@ -32,7 +28,9 @@ async function getAllBlogPosts() {
 
 getAllBlogPosts();
 
+// function for creating the blog posts
 function createBlogHtml(posts) {
+  // formatting the date properly
   const options = {
     year: "numeric",
     month: "long",
@@ -45,7 +43,7 @@ function createBlogHtml(posts) {
     );
 
     let html = `<div class="nobullets blog-post-card hidden-post">
-      <img class="post-img" src="${post._embedded["wp:featuredmedia"]["0"].source_url}">
+      <img class="post-img" src="${post._embedded["wp:featuredmedia"]["0"].source_url}" alt="${post.title.rendered}">
       <div class="post-card box-shadow">
       <div class="post-card-info">
       <span class="date">${date}</span>
@@ -75,6 +73,11 @@ function hideAndShow(posts) {
     .splice(0, 10)
     .forEach((elem) => elem.classList.remove("hidden-post"));
   postCount.innerHTML = posts.length - hiddenArr.length;
+  if (hiddenArr.length < 11) {
+    morePostsBtn.disabled = true;
+    morePostsBtn.classList.add("inactive");
+  }
+
   morePostsBtn.addEventListener("click", function (event) {
     event.preventDefault();
 

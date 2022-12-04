@@ -2,21 +2,18 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
-console.log(id);
-
 const blogPostContainer = document.querySelector(".blog-post-container");
-const blogPostHeader = document.querySelector(".blog-post-header");
 const blogPostTitle = document.querySelector(".blog-post-title");
 const headerImg = document.querySelector(".blog-post-header-img");
 
 const url = `https://feulur.com/tronderpatur/wp-json/wp/v2/posts/${id}?_embed`;
 
+// api call for retrieving the specific blog post by id in the query string
 async function getBlogPost() {
   try {
     const response = await fetch(url);
     const blogPost = await response.json();
 
-    console.log(blogPost);
     blogPostContainer.innerHTML = "";
     createPostHtml(blogPost);
   } catch (error) {
@@ -26,13 +23,15 @@ async function getBlogPost() {
 
 getBlogPost();
 
+// creating the html for each specific blogpost
 function createPostHtml(blogPost) {
+  // formating the date
   const options = {
     year: "numeric",
     month: "long",
     day: "numeric",
   };
-
+  // display the date of the post correctly
   let date = new Intl.DateTimeFormat("en-US", options).format(
     new Date(blogPost.date)
   );
@@ -41,26 +40,19 @@ function createPostHtml(blogPost) {
     <span class="date centered-content">${date}</span>`;
 
   blogPostTitle.innerHTML = headerHtml;
-  document.title = `${blogPost.title.rendered} - Trønder på Tur`;
+  // add the blogpost title as the title of the html document
+  document.title = `${blogPost.title.rendered} | Trønder på Tur`;
 
   headerImg.style.background = `linear-gradient(rgba(18, 20, 22, 0.4), rgba(18, 20, 22, 0.4)), url(${blogPost._embedded["wp:featuredmedia"]["0"].source_url}) center center / cover no-repeat`;
-  //   <div class="blog-post-header-img" >
-  //     <img src="${blogPost._embedded["wp:featuredmedia"]["0"].source_url}">
-  // </div></div>`;
 
-  let html = `
-      
-      <div class="blog-post-tags">
-
-      </div>
-      <div class="blog-post-content">${blogPost.content.rendered}</div>
+  let html = `<div class="blog-post-content">${blogPost.content.rendered}</div>
   `;
-  // blogPostHeader.innerHTML += headerHtml;
   blogPostContainer.innerHTML += html;
   adjustImages();
   toggleImages();
 }
 
+// function for adjusting the images to different sizes (adding different classes depending on how many images are in the post)
 function adjustImages() {
   const postImages = document.querySelectorAll(
     ".blog-post-container .wp-block-image"
@@ -149,35 +141,18 @@ function adjustImages() {
   }
 }
 
-// function for opening an image when clicked
+// function for opening an image modal when clicked
 function toggleImages() {
   const postImages = document.querySelectorAll(
     ".blog-post-container .wp-block-image"
   );
-  const postImageImg = document.querySelectorAll(
-    ".blog-post-container .wp-block-image img"
-  );
+
   postImages.forEach((postImage) => {
     postImage.addEventListener("click", openImage);
     function openImage() {
       postImage.classList.toggle("active");
-      // postImageImg.classList.toggle("active");
     }
   });
-}
-
-// function addBackgroundImage(blogPost) {
-//   const backgroundImg = document.querySelector("header-img");
-//   backgroundImg.style.backgroundImage = `url(${blogPost._embedded["wp:featuredmedia"]["0"].source_url})`;
-// }
-
-{
-  /* <img class="blog-post-header-img" src="${blogPost._embedded["wp:featuredmedia"]["0"].source_url}">
-      <div class="blog-post-title">
-      <h1>${blogPost.title.rendered}</h1>
-      <span class="orange-line"></span>
-      <span class="date">${date}</span>
-      </div></div> */
 }
 
 // COMMENT SECTION //
@@ -236,7 +211,6 @@ function validateMessage(event) {
 
 function submitForm(event) {
   event.preventDefault();
-
   if (
     checkLength(name.value, 5) &&
     checkEmail(email.value) &&

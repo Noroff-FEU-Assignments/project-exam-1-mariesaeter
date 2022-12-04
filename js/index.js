@@ -43,13 +43,22 @@ const latestCarousel = document.querySelector(".latest-carousel");
 const leftButton = document.querySelector(".left-arrow");
 const rightButton = document.querySelector(".right-arrow");
 
+const latestSlide1 = document.querySelector(".latest-slide-1");
+const latestSlide2 = document.querySelector(".latest-slide-2");
+
 async function getBlogPosts() {
   try {
     const response = await fetch(url);
     const blogPosts = await response.json();
 
-    latestCarousel.innerHTML = "";
-    createHtml(blogPosts);
+    latestSlide1.innerHTML = "";
+    latestSlide2.innerHTML = "";
+
+    const blogPostsSlide1 = blogPosts.slice(0, 4);
+    const blogPostsSlide2 = blogPosts.slice(4, 8);
+    console.log(blogPostsSlide1);
+    console.log(blogPostsSlide2);
+    createHtml(blogPostsSlide1, blogPostsSlide2);
   } catch (error) {
     console.log(error);
   }
@@ -58,10 +67,18 @@ async function getBlogPosts() {
 getBlogPosts();
 
 //https: dalenguyen.medium.com/how-to-get-featured-image-from-wordpress-rest-api-5e023b9896c6
-function createHtml(blogPosts) {
-  blogPosts.forEach(function (post) {
-    latestCarousel.innerHTML += `<li class="small-post nobullets"><a class="small-post-link" href="blog-post.html?id=${post.id}">
-                                        <div class="small-post-img-square"><img class="small-post-img" src="${post._embedded["wp:featuredmedia"]["0"].source_url}"> </div>
+function createHtml(blogPostsSlide1, blogPostsSlide2) {
+  blogPostsSlide1.forEach(function (post) {
+    latestSlide1.innerHTML += `<li class="small-post nobullets"><a class="small-post-link" href="blog-post.html?id=${post.id}">
+                                        <div class="small-post-img-square"><img class="small-post-img" src="${post._embedded["wp:featuredmedia"]["0"].source_url}" alt="${post.title.rendered}"> </div>
+                                        <h3>${post.title.rendered}</h3></a>
+
+
+                                    </li>`;
+  });
+  blogPostsSlide2.forEach(function (post) {
+    latestSlide2.innerHTML += `<li class="small-post nobullets"><a class="small-post-link" href="blog-post.html?id=${post.id}">
+                                        <div class="small-post-img-square"><img class="small-post-img" src="${post._embedded["wp:featuredmedia"]["0"].source_url}"alt="${post.title.rendered}"> </div>
                                         <h3>${post.title.rendered}</h3></a>
 
 
@@ -72,8 +89,9 @@ function createHtml(blogPosts) {
 // with help from this source https://www.youtube.com/watch?v=9fJZOmJjTOk
 const latestSlider = document.getElementById("latest-carousel");
 const latestSliderItem = document.getElementsByClassName("small-post");
-// const progressCircle1 = document.getElementById("progress-circle-1");
-// const progressCircle2 = document.getElementById("progress-circle-2");
+
+const progressCircle1 = document.getElementById("progress-1");
+const progressCircle2 = document.getElementById("progress-2");
 
 console.log(latestSliderItem);
 
@@ -81,26 +99,39 @@ console.log(latestSliderItem);
 // progressCircle2.addEventListener("click", () => {changeSlide(currentSlide + 1)});
 leftButton.addEventListener("click", prev);
 rightButton.addEventListener("click", next);
+progressCircle1.addEventListener("click", prev);
+progressCircle2.addEventListener("click", next);
 
 // let currentSlide = 0;
 
 function next() {
-  latestSlider.append(
-    latestSliderItem[0],
-    latestSliderItem[1],
-    latestSliderItem[2],
-    latestSliderItem[3],
-    latestSliderItem[4]
-  );
+  latestSlide1.classList.remove("active");
+
+  latestSlide2.classList.add("active");
+  progressCircle2.classList.add("active");
+  progressCircle1.classList.remove("active");
+
+  // latestSlider.append(
+  //   latestSliderItem[0],
+  //   latestSliderItem[1],
+  //   latestSliderItem[2],
+  //   latestSliderItem[3],
+  //   latestSliderItem[4]
+  // );
 }
 function prev() {
-  latestSlider.prepend(
-    latestSliderItem[latestSliderItem.length - 5],
-    latestSliderItem[latestSliderItem.length - 4],
-    latestSliderItem[latestSliderItem.length - 3],
-    latestSliderItem[latestSliderItem.length - 2],
-    latestSliderItem[latestSliderItem.length - 1]
-  );
+  latestSlide2.classList.remove("active");
+
+  latestSlide1.classList.add("active");
+  progressCircle1.classList.add("active");
+  progressCircle2.classList.remove("active");
+  // latestSlider.prepend(
+  //   latestSliderItem[latestSliderItem.length - 5],
+  //   latestSliderItem[latestSliderItem.length - 4],
+  //   latestSliderItem[latestSliderItem.length - 3],
+  //   latestSliderItem[latestSliderItem.length - 2],
+  //   latestSliderItem[latestSliderItem.length - 1]
+  // );
 }
 
 // // function next() {
@@ -248,7 +279,7 @@ function createFeatured(featuredTyttebaera) {
     );
 
     featuredCarouselTyttebaera.innerHTML += `<div class="nobullets featured-post">
-      <img class="featured-post-img" src="${post._embedded["wp:featuredmedia"]["0"].source_url}">
+      <img class="featured-post-img" src="${post._embedded["wp:featuredmedia"]["0"].source_url}" alt="${post.title.rendered}">
       <div class="featured-post-card box-shadow">
       <div class="post-card-info">
       <span class="date">${date}</span>
@@ -277,7 +308,7 @@ function createFeaturedAbroad(featuredAbroad) {
     );
 
     featuredCarouselAbroad.innerHTML += `<div class="nobullets featured-post">
-      <img class="featured-post-img" src="${post._embedded["wp:featuredmedia"]["0"].source_url}">
+      <img class="featured-post-img" src="${post._embedded["wp:featuredmedia"]["0"].source_url}" alt="${post.title.rendered}">
       <div class="featured-post-card box-shadow">
       <div class="post-card-info">
       <span class="date">${date}</span>
