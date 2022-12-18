@@ -33,12 +33,22 @@ A travelling blog created by using headless CMS and REST API. Made during Noroff
 1. Clone the repo
 
 ```bash
-https://github.com/Noroff-FEU-Assignments/project-exam-1-mariesaeter.git
+git clone https://github.com/Noroff-FEU-Assignments/project-exam-1-mariesaeter.git
 ```
 
 no dependencies
 
-### Running
+## Contributing
+### Issues
+Feel free to submit issues and requests for improvements.
+
+### Pull requests
+
+1. Fork the repo on GitHub
+2. Install the repo on your own computer
+3. Commit changes to the new branch you created
+4. Push your work up to your fork
+5. Submit a Pull request so that your changes can be reviewed
 
 ## Contact
 
