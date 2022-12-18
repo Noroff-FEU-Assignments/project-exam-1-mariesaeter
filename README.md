@@ -88,7 +88,8 @@ function closeMenu() {
   hamburgerMenu.classList.remove("active");
   nav.classList.remove("active");
 }
-``
+```
+
 #### API loader 
 API loader animation and style is inspired by [Chris Coyier on CSS Tricks](https://css-tricks.com/almanac/properties/m/mask-image/) for the use of mask-image and by [Manuel Pinoto on Codepen](https://codepen.io/P1N2O/pen/pyBNzX) for the gradient.
 ```
