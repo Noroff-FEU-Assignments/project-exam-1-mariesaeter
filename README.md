@@ -1,78 +1,69 @@
-## Trønder på tur - blog
+# Community Science Museum - Informational website
 
-Images: All images are taken by me Marie Sæter
-Images of me are taken by my sister Camilla Sæter
-Icons: Icons are gathered from fontawesome.com
-Logo: logo is created by me
+A travelling blog site for trips I have been on.
 
-## Project Exam 1
+> Live demo [_here_](https://tronderpatur.netlify.app)
 
-## Goal
+<img width="1440" alt="tronderpatur-frontpage-screenshot" src="https://user-images.githubusercontent.com/96269610/208297307-6719b2e3-4bd7-49ff-86e9-6a6e7b82ba10.png">
 
-To put into practice the skills learned over your first year of studies.
 
-## Brief
+## Description
 
-You have been tasked with creating a blog site. You can choose the design and topics covered on the blog, but it should have at least the following pages:
+A travelling blog created by using headless CMS and REST API. Made during Noroff School of Technology and Digital Media year 1 of Front-End Development for project exam 1.
 
-- Home page
-- About page
-- List of blog posts
-- Blog post specific pages
-- Contact page.
+- The project's goal was to use what I had learned from year 1 in Front-End developement in action. This includes HTML, CSS and JavaScript.
+- The website is built responsive without the use of any additional framework.
+- All design choices and topic choice is done by me.
 
-### Home Page
+## Features
+- A latest posts carousel slider on web view (not on mobile) can be found on the home page
+- Image modal when clicking images on the individual blog post pages 
+- Contact form with JavaScript validation
 
-The home page should have a ‘Latest Posts’ section which uses a carousel (slider) for users to click to view more posts. For example, by default the user can see four posts, then they can click an arrow on the right to view the next four posts, and click it again to view the next four posts. The user can also click back to view results they had previously seen. This must be implemented for desktop at least, but if you want a simpler layout for mobile, you can change it from being in a carousel.
+## Built with
 
-### Blog Page
+- HTML
+- CSS
+- Vanilla JavaScript
 
-The blog posts page should show the first 10 blogs, and the user should click to view more results which then show underneath the first 10 blogs.
+## Getting Started
 
-### Blog Specific Page
+### Installing
 
-The content of the blog specific page should be dynamically built using a query string parameter based on whatever link the user clicked. The title of the blog specific page should change based on the blog that has been clicked on e.g. “My Blog | An Article I Wrote”.
+1. Clone the repo
 
-If images on the blog post page are clicked, a modal should appear giving the user a bigger view of that image. Clicking outside the image should hide the modal.
+```bash
+https://github.com/Noroff-FEU-Assignments/project-exam-1-mariesaeter.git
+```
 
-### Contact page
+no dependencies
 
-Create a contact us page, there should be 4 textboxes on this page.
+### Running
 
-- Name (Should be more than 5 characters long)
-- Email address (Must be a valid email address)
-- Subject (Should be more than 15 characters long)
-- Message content (Should be more than 25 characters long)
+## Contact
 
-Please use JavaScript for validation, show error messages if the values in the textboxes do not meet the requirements.
+[My LinkedIn Page](www.linkedin.com/in/marie-sæter-954821207)
+Feel free to contact me!
 
-### WordPress
+## Room for improvements
+- Adjust latest post cards in mobile view (at the moment some white space is added)
 
-The content for your website will be stored on a WordPress installation used as a Headless CMS. It’s important to note that we are only using WordPress to provide an API and add content for the blog. You should not submit a link to a WordPress site, but build your website using HTML, CSS and JavaScript and making a call to the WordPress REST API to fetch the data.
+### To do
+- Add filtering options on the blog page
+- Add functional search option
+- Add more to footer
 
-The project has two aspects:
+## Acknowledgement
 
-- API from your WordPress installation
-- Your website built with HTML, CSS and JavaScript
+### Images and icons
++ All images are taken by me Marie Sæter
++ Images of me are taken by my sister Camilla Sæter
++ Icons are gathered from the free pack at [fontawesome.com](https://fontawesome.com)
++ Logo is created by me
 
-You will need to add at least 12 blogs for your website. You can use lorem ipsum for paragraphs if you need, but headings, images etc. should all make sense.
 
-Note that this is an exam, and therefore tutor support will be limited as per the study plan.
 
-## Level 1 Process
 
-1. Decide on the theme for the blog you’re going to make
-2. Create a prototype of the website
-3. Install WordPress on your web host and add the blogs on the admin panel.
-4. Use the GitHub repo created by GitHub Classroom for your files and deploy to Netlify
-5. Build your website using HTML, CSS and JavaScript making a call to the WordPress REST API to fetch your data.
-6. Install Hotjar on your website.
-7. Ask users to test your website, and adjust based on their feedback and any insights from Hotjar.
-8. Write a report documenting your project (template provided in this repository).
-9. Submit your report as a PDF and a link to both your Netlify deployment and your GitHub repo.
 
-## Level 2 Process (optional)
 
-1. You can try adding a sort, filter, or search to the blog posts page allowing users to find the blog post more easily that they’re looking for.
-2. Post the data from the contact form to WordPress so you have the details saved.
-3. Allow users to submit comments on a blog post, and post this data to WordPress
+
