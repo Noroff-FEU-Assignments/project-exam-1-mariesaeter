@@ -1,4 +1,4 @@
-# Community Science Museum - Informational website
+# Trønder på Tur - Travelling blog
 
 A travelling blog site for trips I have been on.
 
